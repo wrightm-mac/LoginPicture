@@ -10,7 +10,7 @@ import UIKit
 
 
 @IBDesignable
-open class LoginPanel: UIView {
+open class LoginPanel: KeyboardableView {
 
     // MARK:    Fields...
     
@@ -43,7 +43,7 @@ open class LoginPanel: UIView {
     open override func layoutSubviews() {
         super.layoutSubviews()
      
-        view.applyBorder()
+        view.applyBorder(cornerSize: .small, width: .medium, color: .black)
         
         view.backgroundColor = backgroundColor
     }

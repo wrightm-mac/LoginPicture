@@ -15,6 +15,15 @@ class LoginPanelView: UIView {
     @IBOutlet weak var passwordTextField: UITextField!
     
     
+    // MARK:    Overrides...
+    
+    open override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    
+    // MARK:    Events...
+    
     @IBAction func loginTouchUpInside(_ sender: UIButton) {
         guard let username = usernameTextField.text, let password = passwordTextField.text else {
             print("no username/password")

@@ -14,6 +14,16 @@ public extension UIView {
     
     // MARK:    View management...
     
+    public func visitChildren(recurse: Bool = false, callback: ((UIView) -> Void)) {
+        for child in self.subviews {
+            callback(child)
+            
+            if recurse {
+                child.visitChildren(recurse: recurse, callback: callback)
+            }
+        }
+    }
+
     public func removeSubviews() {
         subviews.forEach { view in view.removeFromSuperview() }
     }

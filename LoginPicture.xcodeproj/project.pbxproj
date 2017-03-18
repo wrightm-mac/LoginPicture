@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2448E27C1E7DAC36001F682A /* KeyboardableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448E27B1E7DAC36001F682A /* KeyboardableView.swift */; };
 		24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */; };
 		24B896DA1E7D93E700F3F8A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B896D81E7D93E700F3F8A0 /* Main.storyboard */; };
 		24B896DC1E7D93E700F3F8A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24B896DB1E7D93E700F3F8A0 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2448E27B1E7DAC36001F682A /* KeyboardableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardableView.swift; path = Source/KeyboardableView.swift; sourceTree = "<group>"; };
 		24B896D11E7D93E700F3F8A0 /* LoginPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24B896D91E7D93E700F3F8A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		24B896F41E7D93FA00F3F8A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2448E27B1E7DAC36001F682A /* KeyboardableView.swift */,
 				24B896F91E7D94A200F3F8A0 /* LoginPanel.swift */,
 				24B896FD1E7D952A00F3F8A0 /* LoginPanel.xib */,
 				24B896FB1E7D94F100F3F8A0 /* LoginPanelView.swift */,
@@ -259,6 +262,7 @@
 			files = (
 				24B896FA1E7D94A200F3F8A0 /* LoginPanel.swift in Sources */,
 				24B897021E7D962D00F3F8A0 /* UIViewExtensions.swift in Sources */,
+				2448E27C1E7DAC36001F682A /* KeyboardableView.swift in Sources */,
 				24B897041E7D986800F3F8A0 /* StandardButton.swift in Sources */,
 				24B896F81E7D943500F3F8A0 /* MainViewController.swift in Sources */,
 				24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */,
@@ -472,6 +476,7 @@
 				24B896F01E7D93E700F3F8A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		24B896F11E7D93E700F3F8A0 /* Build configuration list for PBXNativeTarget "LoginPictureTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +485,7 @@
 				24B896F31E7D93E700F3F8A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
