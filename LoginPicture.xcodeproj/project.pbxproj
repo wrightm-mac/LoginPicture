@@ -14,6 +14,7 @@
 		242565CA1E7EDB9D00C246A1 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C91E7EDB9D00C246A1 /* Configuration.swift */; };
 		242565CC1E7EDC3100C246A1 /* ConfigurationValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565CB1E7EDC3100C246A1 /* ConfigurationValue.swift */; };
 		242565CF1E7EDF9F00C246A1 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 242565CE1E7EDF9F00C246A1 /* Configuration.plist */; };
+		242565D21E7EE79000C246A1 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565D11E7EE79000C246A1 /* Container.swift */; };
 		2448E27C1E7DAC36001F682A /* KeyboardableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448E27B1E7DAC36001F682A /* KeyboardableView.swift */; };
 		24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */; };
 		24B896DA1E7D93E700F3F8A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B896D81E7D93E700F3F8A0 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		242565C91E7EDB9D00C246A1 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Source/Configuration.swift; sourceTree = "<group>"; };
 		242565CB1E7EDC3100C246A1 /* ConfigurationValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfigurationValue.swift; path = Source/ConfigurationValue.swift; sourceTree = "<group>"; };
 		242565CE1E7EDF9F00C246A1 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Configuration.plist; path = Source/Configuration.plist; sourceTree = "<group>"; };
+		242565D11E7EE79000C246A1 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Container.swift; path = Source/Container.swift; sourceTree = "<group>"; };
 		2448E27B1E7DAC36001F682A /* KeyboardableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardableView.swift; path = Source/KeyboardableView.swift; sourceTree = "<group>"; };
 		24B896D11E7D93E700F3F8A0 /* LoginPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +102,14 @@
 				242565CB1E7EDC3100C246A1 /* ConfigurationValue.swift */,
 			);
 			name = Configuration;
+			sourceTree = "<group>";
+		};
+		242565D01E7EE77600C246A1 /* DependencyInjection */ = {
+			isa = PBXGroup;
+			children = (
+				242565D11E7EE79000C246A1 /* Container.swift */,
+			);
+			name = DependencyInjection;
 			sourceTree = "<group>";
 		};
 		24B896C81E7D93E600F3F8A0 = {
@@ -176,6 +186,7 @@
 		24B896FF1E7D960F00F3F8A0 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				242565D01E7EE77600C246A1 /* DependencyInjection */,
 				242565C81E7EDB8900C246A1 /* Configuration */,
 				24B897001E7D961700F3F8A0 /* Extensions */,
 				242565C11E7ECCD000C246A1 /* Logging */,
@@ -309,6 +320,7 @@
 				24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */,
 				242565CC1E7EDC3100C246A1 /* ConfigurationValue.swift in Sources */,
 				24B896FC1E7D94F100F3F8A0 /* LoginPanelView.swift in Sources */,
+				242565D21E7EE79000C246A1 /* Container.swift in Sources */,
 				242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */,
 				242565C01E7ECCC700C246A1 /* Logger.swift in Sources */,
 			);
