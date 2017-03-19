@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		242565C01E7ECCC700C246A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565BF1E7ECCC700C246A1 /* Logger.swift */; };
+		242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C21E7ECD0100C246A1 /* LogLevel.swift */; };
+		242565C51E7ECFA200C246A1 /* ConsoleLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */; };
+		242565C71E7ED17900C246A1 /* ILogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C61E7ED17900C246A1 /* ILogWriter.swift */; };
 		2448E27C1E7DAC36001F682A /* KeyboardableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448E27B1E7DAC36001F682A /* KeyboardableView.swift */; };
 		24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */; };
 		24B896DA1E7D93E700F3F8A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B896D81E7D93E700F3F8A0 /* Main.storyboard */; };
@@ -32,6 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		242565BF1E7ECCC700C246A1 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
+		242565C21E7ECD0100C246A1 /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogLevel.swift; path = Source/LogLevel.swift; sourceTree = "<group>"; };
+		242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleLogWriter.swift; path = Source/ConsoleLogWriter.swift; sourceTree = "<group>"; };
+		242565C61E7ED17900C246A1 /* ILogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ILogWriter.swift; path = Source/ILogWriter.swift; sourceTree = "<group>"; };
 		2448E27B1E7DAC36001F682A /* KeyboardableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardableView.swift; path = Source/KeyboardableView.swift; sourceTree = "<group>"; };
 		24B896D11E7D93E700F3F8A0 /* LoginPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +76,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		242565C11E7ECCD000C246A1 /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				242565BF1E7ECCC700C246A1 /* Logger.swift */,
+				242565C21E7ECD0100C246A1 /* LogLevel.swift */,
+				242565C61E7ED17900C246A1 /* ILogWriter.swift */,
+				242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */,
+			);
+			name = Logging;
+			sourceTree = "<group>";
+		};
 		24B896C81E7D93E600F3F8A0 = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				24B897001E7D961700F3F8A0 /* Extensions */,
+				242565C11E7ECCD000C246A1 /* Logging */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -260,13 +280,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				242565C71E7ED17900C246A1 /* ILogWriter.swift in Sources */,
 				24B896FA1E7D94A200F3F8A0 /* LoginPanel.swift in Sources */,
 				24B897021E7D962D00F3F8A0 /* UIViewExtensions.swift in Sources */,
 				2448E27C1E7DAC36001F682A /* KeyboardableView.swift in Sources */,
+				242565C51E7ECFA200C246A1 /* ConsoleLogWriter.swift in Sources */,
 				24B897041E7D986800F3F8A0 /* StandardButton.swift in Sources */,
 				24B896F81E7D943500F3F8A0 /* MainViewController.swift in Sources */,
 				24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */,
 				24B896FC1E7D94F100F3F8A0 /* LoginPanelView.swift in Sources */,
+				242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */,
+				242565C01E7ECCC700C246A1 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

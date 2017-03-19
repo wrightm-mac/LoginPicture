@@ -34,25 +34,25 @@ open class KeyboardableView: UIView {
     // MARK:    Events...
 
     @objc private func keyboardWillShow(notification: NSNotification) {
-        print("🙂 LoginPanelView.\(#function)")
+        Logger.instance.event()
         
         showKeyboard()
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
-        print("🙂 LoginPanelView.\(#function)")
+        Logger.instance.event()
         
         hideKeyboard()
     }
     
     @objc private func textFieldDidBeginEditing(sender: UITextField) {
-        print("🙂 LoginPanelView.\(#function)")
+        Logger.instance.event()
         
         beginEditing(sender: sender)
     }
     
     @objc private func textFieldDidEndOnExit(sender: UITextField) {
-        print("🙂 LoginPanelView.\(#function)")
+        Logger.instance.event()
         
         endEditing(sender: sender)
     }

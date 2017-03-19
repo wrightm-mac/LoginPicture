@@ -52,12 +52,10 @@ class LoginPanelView: UIView {
     
     @IBAction func loginTouchUpInside(_ sender: UIButton) {
         guard let username = usernameTextField.text, let password = passwordTextField.text else {
-            print("no username/password")
             return
         }
         
-        print("🙂 LoginPanelView.\(#function) username='\(username)' password='\(password)'")
-        
+        _ = resignFirstResponder()
         loginPressedFunc?(username, password)
     }
 }

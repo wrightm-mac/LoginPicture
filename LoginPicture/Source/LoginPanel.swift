@@ -12,6 +12,9 @@ import UIKit
 @IBDesignable
 open class LoginPanel: KeyboardableView {
 
+    private var logger = Logger()
+    
+    
     // MARK:    Fields...
     
     private weak var view: LoginPanelView! = nil
@@ -47,9 +50,9 @@ open class LoginPanel: KeyboardableView {
         
         view.backgroundColor = backgroundColor
         view.onLoginPressed {
-            _, _ in
+            username, password in
             
-            _ = self.view.resignFirstResponder()
+            Logger.instance.event("loginPressed [username=\(username)][password=\(password)]")
         }
     }
     
