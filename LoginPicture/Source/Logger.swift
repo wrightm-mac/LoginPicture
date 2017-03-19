@@ -31,17 +31,25 @@ open class Logger {
     // MARK:    Fields...
     
     private var writers: [LogLevel: ILogWriter] = [
-        .debug: ConsoleLogWriter(prefix: "😗 -debug->"),
-        .info: ConsoleLogWriter(prefix: "🙂 -info-->"),
-        .event: ConsoleLogWriter(prefix: "😎 -event->"),
-        .warn: ConsoleLogWriter(prefix: "😡 -warn-->"),
-        .error: ConsoleLogWriter(prefix: "💩 -error->"),
+        .error: ConsoleLogWriter(prefix: "error:")
     ]
     
     
     // MARK:    Initialisers...
     
-    public init() {
+    private init() {
+        print("*********** Logger.\(#function) ***********")
+        
+        let configuration = Configuration()
+        let logLevelSetting = configuration["LogLevel"].string
+        let logLevels = logLevelSetting.components(separatedBy: ",")
+        
+        for logLevel in logLevels {
+            let level = LogLevel(rawValue: logLevel)!
+            writers[level] = ConsoleLogWriter(prefix: level.defaultPrefix)
+            
+            print("using log-level '\(level)' with default-prefix '\(level.defaultPrefix)'")
+        }
     }
     
     

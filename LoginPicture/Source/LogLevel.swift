@@ -16,4 +16,15 @@ public enum LogLevel: String {
     case event = "event"
     case warn = "warn"
     case error = "error"
+    
+    
+    public var defaultPrefix: String {
+        switch self {
+            case .debug: return "😗 -debug->"
+            case .info: return "😁 -info-->"
+            case .event: return "😎 -event->"
+            case .warn: return "😡 -warn-->"
+            case .error: return "💩 -error->"
+        }
+    }
 }

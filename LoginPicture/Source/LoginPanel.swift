@@ -12,9 +12,6 @@ import UIKit
 @IBDesignable
 open class LoginPanel: KeyboardableView {
 
-    private var logger = Logger()
-    
-    
     // MARK:    Fields...
     
     private weak var view: LoginPanelView! = nil

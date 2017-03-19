@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   Configuration.plist
+   LoginPicture
+
+   Created by Michael Wright on 19/03/2017.
+   Copyright (c) 2017 wrightm@mac.com. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        <key>LogLevel</key>
+        <string>debug,info,event,warn,error</string>
+    </dict>
+</plist>
