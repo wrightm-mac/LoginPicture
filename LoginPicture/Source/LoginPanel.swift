@@ -46,5 +46,16 @@ open class LoginPanel: KeyboardableView {
         view.applyBorder(cornerSize: .small, width: .medium, color: .black)
         
         view.backgroundColor = backgroundColor
+        view.onLoginPressed {
+            _, _ in
+            
+            _ = self.view.resignFirstResponder()
+        }
+    }
+    
+    open override func endEditing(sender: UITextField) {
+        if sender == view.usernameTextField {
+            view.passwordTextField.becomeFirstResponder()
+        }
     }
 }

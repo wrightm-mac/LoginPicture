@@ -15,10 +15,36 @@ class LoginPanelView: UIView {
     @IBOutlet weak var passwordTextField: UITextField!
     
     
+    typealias LoginPressedFunc = (String, String) -> Void
+    
+    
+    // MARK:    Fields...
+    
+    var loginPressedFunc: LoginPressedFunc? = nil
+    
+    
     // MARK:    Overrides...
     
     open override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    
+    // MARK:    Methods...
+    
+    func onLoginPressed(callback: @escaping LoginPressedFunc) {
+        loginPressedFunc = callback
+    }
+    
+    override func resignFirstResponder() -> Bool {
+        if usernameTextField.isFirstResponder {
+            usernameTextField.resignFirstResponder()
+        }
+        else if passwordTextField.isFirstResponder {
+            passwordTextField.resignFirstResponder()
+        }
+        
+        return true
     }
     
     
@@ -31,5 +57,7 @@ class LoginPanelView: UIView {
         }
         
         print("🙂 LoginPanelView.\(#function) username='\(username)' password='\(password)'")
+        
+        loginPressedFunc?(username, password)
     }
 }
