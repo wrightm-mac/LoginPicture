@@ -15,9 +15,17 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         Logger.instance.debug("hello, world!")
-        Logger.instance.info("hello, world!")
-        Logger.instance.event("hello, world!")
-        Logger.instance.warn("hello, world!")
-        Logger.instance.error("hello, world!")
+        
+        let container = Container() {
+            container in
+            
+            container.register(forType: String.self) { "yada yada yada!"}
+            container.register(forType: Int.self) { 2108 }
+        }
+        
+        let x = container.resolve(forType: Int.self)
+        let y = container.resolve(forType: String.self)
+        
+        Logger.instance.event(" x='\(x)' y='\(y)'")
     }
 }
