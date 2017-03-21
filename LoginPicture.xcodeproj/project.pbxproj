@@ -27,6 +27,7 @@
 		24B896FE1E7D952A00F3F8A0 /* LoginPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B896FD1E7D952A00F3F8A0 /* LoginPanel.xib */; };
 		24B897021E7D962D00F3F8A0 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */; };
 		24B897041E7D986800F3F8A0 /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B897031E7D986800F3F8A0 /* StandardButton.swift */; };
+		24DE06271E814E930072E5FE /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE06261E814E930072E5FE /* ContainerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		24B896FD1E7D952A00F3F8A0 /* LoginPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginPanel.xib; path = Source/LoginPanel.xib; sourceTree = "<group>"; };
 		24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = Source/UIViewExtensions.swift; sourceTree = "<group>"; };
 		24B897031E7D986800F3F8A0 /* StandardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardButton.swift; path = Source/StandardButton.swift; sourceTree = "<group>"; };
+		24DE06261E814E930072E5FE /* ContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				24B896E91E7D93E700F3F8A0 /* LoginPictureTests.swift */,
 				24B896EB1E7D93E700F3F8A0 /* Info.plist */,
+				24DE06261E814E930072E5FE /* ContainerTests.swift */,
 			);
 			path = LoginPictureTests;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24B896EA1E7D93E700F3F8A0 /* LoginPictureTests.swift in Sources */,
+				24DE06271E814E930072E5FE /* ContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,9 +10,13 @@ import Foundation
 
 
 /**
- *Dependency Injection* container.
- 
- Based on, but much more limited than, the `Swinject` Cocoapod.
+    *Dependency Injection* container.
+
+    Based on, but much more limited than, the `Swinject` Cocoapod.
+
+    Note that the Types are are registered by their name, so resolving a Type will
+    only succeed if the exact same Type (regardless of inheritance and implementation)
+    is used for both `register` and `resolve` calls.
 */
 open class Container {
     
@@ -44,9 +48,7 @@ open class Container {
                                 class `forType`.
     */
     open func register<T>(forType: T.Type, callback: @escaping () -> T) {
-        let typeName = "\(type(of: forType))"
-        
-        types[typeName] = callback
+        types[getName(forType)] = callback
     }
     
     /**
@@ -58,12 +60,15 @@ open class Container {
         - returns: Object of Type, or `nil` if the Type could not be resolved.
     */
     open func resolve<T>(forType: T.Type) -> T? {
-        let typeName = "\(type(of: forType))"
-
-        guard let creatorFunc = types[typeName] as? (() -> T) else {
+        guard let creatorFunc = types[getName(forType)] as? (() -> T) else {
             return nil
         }
         
         return creatorFunc()
+    }
+    
+    
+    private func getName<T>(_ forType: T.Type) -> String {
+        return String(describing: forType)
     }
 }
