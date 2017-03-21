@@ -19,19 +19,23 @@ class MainViewController: UIViewController {
         
         Logger.instance.debug("hello, world!")
         
-        let networkService = NetworkService()
         
-        networkService.fetchImage(imageName: "space_64.png") {
-            image in
-            
-            guard let fetchedImage = image else {
-                Logger.instance.error("no image!")
-                return
+        NetworkCall(url: "space_64.png")
+            .withHeader(name: "Auth-abc", value: "123")
+            .withHeader(name: "Auth-pqr", value: "456")
+            .withHeader(name: "Auth-xyz", value: "789")
+            .withParameter(name: "first", value: "one&x")
+            .withParameter(name: "second", value: "two z z z")
+            .withParameter(name: "third", value: "three")
+            .post {
+                data in
+                
+                DispatchQueue.main.async {
+                    let image = UIImage(data: data!)
+                    self.displayImage.image = image
+                }
+                
+                Logger.instance.debug("kerching!!!")
             }
-            
-            DispatchQueue.main.async {
-                self.displayImage.image = fetchedImage
-            }
-        }
     }
 }
