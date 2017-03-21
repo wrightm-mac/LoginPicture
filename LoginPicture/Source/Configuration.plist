@@ -11,5 +11,9 @@
     <dict>
         <key>LogLevel</key>
         <string>debug,info,event,warn,error</string>
+        <key>BaseUrl</key>
+        <string>https://a.fsdn.com/sd/</string>
+        <key>ServiceCall</key>
+        <string>https://a.fsdn.com/sd/topics/space_64.png</string>
     </dict>
 </plist>

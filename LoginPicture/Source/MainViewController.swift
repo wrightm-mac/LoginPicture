@@ -11,21 +11,27 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var displayImage: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Logger.instance.debug("hello, world!")
         
-        let container = Container() {
-            container in
+        let networkService = NetworkService()
+        
+        networkService.fetchImage(imageName: "space_64.png") {
+            image in
             
-            container.register(forType: String.self) { "yada yada yada!"}
-            container.register(forType: Int.self) { 2108 }
+            guard let fetchedImage = image else {
+                Logger.instance.error("no image!")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.displayImage.image = fetchedImage
+            }
         }
-        
-        let x = container.resolve(forType: Int.self)
-        let y = container.resolve(forType: String.self)
-        
-        Logger.instance.event(" x='\(x)' y='\(y)'")
     }
 }
