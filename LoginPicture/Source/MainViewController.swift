@@ -25,7 +25,9 @@ class MainViewController: UIViewController {
             
             Logger.instance.info("username='\(username)' password='\(password)'")
             
-            NetworkCaller()
+            let caller = AppDelegate.container.resolve(forType: INetworkCaller.self)!
+            
+            caller
                 .authenticate(username: username, password: password)
                 .withHeader(name: "Auth-abc", value: "123")
                 .withHeader(name: "Auth-pqr", value: "456")

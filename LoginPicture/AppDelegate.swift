@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //  MARK:   Dependency Injection...
     
-    var container = Container {
+    static var container = Container {
         container in
         
         container.register(forType: INetworkCaller.self) { _ in NetworkCaller()}
