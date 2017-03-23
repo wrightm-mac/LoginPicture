@@ -11,10 +11,15 @@ import UIKit
 
 @IBDesignable
 open class LoginPanel: KeyboardableView {
+    
+    public typealias LoginFunc = (String, String) -> Void
 
+    
     // MARK:    Fields...
     
     private weak var view: LoginPanelView! = nil
+    
+    private var loginFunc: LoginFunc? = nil
     
     
     // MARK:    Initialisers...
@@ -45,17 +50,24 @@ open class LoginPanel: KeyboardableView {
      
         view.applyBorder(cornerSize: .small, width: .medium, color: .black)
         
+        view.parent = self
         view.backgroundColor = backgroundColor
-        view.onLoginPressed {
-            username, password in
-            
-            Logger.instance.event("loginPressed [username=\(username)][password=\(password)]")
-        }
     }
     
     open override func endEditing(sender: UITextField) {
         if sender == view.usernameTextField {
             view.passwordTextField.becomeFirstResponder()
         }
+    }
+    
+    
+    // MARK:    Methods...
+    
+    open func onLogin(callback: @escaping LoginFunc) {
+        loginFunc = callback
+    }
+    
+    open func loginPressed(username: String, password: String) {
+        loginFunc?(username, password)
     }
 }

@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="height" constant="148" id="xW0-ZS-n8E"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JV6-LJ-Pte">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JV6-LJ-Pte">
                                 <rect key="frame" x="16" y="238" width="343" height="409"/>
                             </imageView>
                         </subviews>
@@ -46,6 +46,7 @@
                     </view>
                     <connections>
                         <outlet property="displayImage" destination="JV6-LJ-Pte" id="3fd-eC-aqj"/>
+                        <outlet property="loginPanel" destination="fPw-uc-pAZ" id="3sd-gz-BI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

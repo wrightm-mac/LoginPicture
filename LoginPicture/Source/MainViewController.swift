@@ -11,6 +11,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var loginPanel: LoginPanel!
     @IBOutlet weak var displayImage: UIImageView!
     
     
@@ -19,23 +20,28 @@ class MainViewController: UIViewController {
         
         Logger.instance.debug("hello, world!")
         
-        
-        NetworkCall(url: "space_64.png")
-            .withHeader(name: "Auth-abc", value: "123")
-            .withHeader(name: "Auth-pqr", value: "456")
-            .withHeader(name: "Auth-xyz", value: "789")
-            .withParameter(name: "first", value: "one&x")
-            .withParameter(name: "second", value: "two z z z")
-            .withParameter(name: "third", value: "three")
-            .post {
-                data in
-                
-                DispatchQueue.main.async {
-                    let image = UIImage(data: data!)
-                    self.displayImage.image = image
-                }
-                
-                Logger.instance.debug("kerching!!!")
+        loginPanel.onLogin {
+            username, password in
+            
+            Logger.instance.info("username=\(username) password=\(password)")
+            
+            NetworkCall(url: "space_64.png")
+                .withHeader(name: "Auth-abc", value: "123")
+                .withHeader(name: "Auth-pqr", value: "456")
+                .withHeader(name: "Auth-xyz", value: "789")
+                .withParameter(name: "first", value: "one&x")
+                .withParameter(name: "second", value: "two z z z")
+                .withParameter(name: "third", value: "three")
+                .post {
+                    data in
+                    
+                    DispatchQueue.main.async {
+                        let image = UIImage(data: data!)
+                        self.displayImage.image = image
+                    }
+                    
+                    Logger.instance.debug("kerching!!!")
             }
+        }
     }
 }

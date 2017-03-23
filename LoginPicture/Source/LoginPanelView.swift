@@ -20,7 +20,7 @@ class LoginPanelView: UIView {
     
     // MARK:    Fields...
     
-    var loginPressedFunc: LoginPressedFunc? = nil
+    weak var parent: LoginPanel? = nil
     
     
     // MARK:    Overrides...
@@ -31,10 +31,6 @@ class LoginPanelView: UIView {
     
     
     // MARK:    Methods...
-    
-    func onLoginPressed(callback: @escaping LoginPressedFunc) {
-        loginPressedFunc = callback
-    }
     
     override func resignFirstResponder() -> Bool {
         if usernameTextField.isFirstResponder {
@@ -56,6 +52,7 @@ class LoginPanelView: UIView {
         }
         
         _ = resignFirstResponder()
-        loginPressedFunc?(username, password)
+        
+        parent?.loginPressed(username: username, password: password)
     }
 }
