@@ -27,6 +27,8 @@
 		24B896FE1E7D952A00F3F8A0 /* LoginPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24B896FD1E7D952A00F3F8A0 /* LoginPanel.xib */; };
 		24B897021E7D962D00F3F8A0 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */; };
 		24B897041E7D986800F3F8A0 /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B897031E7D986800F3F8A0 /* StandardButton.swift */; };
+		24BD04C61E83C86C00C95BE9 /* INetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD04C51E83C86C00C95BE9 /* INetworkCaller.swift */; };
+		24BD04C81E83CC6000C95BE9 /* INetworkAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD04C71E83CC6000C95BE9 /* INetworkAuthenticator.swift */; };
 		24DE06271E814E930072E5FE /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE06261E814E930072E5FE /* ContainerTests.swift */; };
 		24DE062E1E81740F0072E5FE /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE062D1E81740F0072E5FE /* NetworkCaller.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		24B896FD1E7D952A00F3F8A0 /* LoginPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginPanel.xib; path = Source/LoginPanel.xib; sourceTree = "<group>"; };
 		24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtensions.swift; path = Source/UIViewExtensions.swift; sourceTree = "<group>"; };
 		24B897031E7D986800F3F8A0 /* StandardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardButton.swift; path = Source/StandardButton.swift; sourceTree = "<group>"; };
+		24BD04C51E83C86C00C95BE9 /* INetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INetworkCaller.swift; path = Source/INetworkCaller.swift; sourceTree = "<group>"; };
+		24BD04C71E83CC6000C95BE9 /* INetworkAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INetworkAuthenticator.swift; path = Source/INetworkAuthenticator.swift; sourceTree = "<group>"; };
 		24DE06261E814E930072E5FE /* ContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTests.swift; sourceTree = "<group>"; };
 		24DE062D1E81740F0072E5FE /* NetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkCaller.swift; path = Source/NetworkCaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,9 +145,9 @@
 				24B896F61E7D941300F3F8A0 /* Controllers */,
 				24B896F51E7D940900F3F8A0 /* Models */,
 				24B896F41E7D93FA00F3F8A0 /* Views */,
-				24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */,
 				24B896DB1E7D93E700F3F8A0 /* Assets.xcassets */,
 				24B896DD1E7D93E700F3F8A0 /* LaunchScreen.storyboard */,
+				24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */,
 				24B896E01E7D93E700F3F8A0 /* Info.plist */,
 				242565CE1E7EDF9F00C246A1 /* Configuration.plist */,
 				24B896D81E7D93E700F3F8A0 /* Main.storyboard */,
@@ -211,6 +215,8 @@
 		24DE062A1E8163CB0072E5FE /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				24BD04C71E83CC6000C95BE9 /* INetworkAuthenticator.swift */,
+				24BD04C51E83C86C00C95BE9 /* INetworkCaller.swift */,
 				24DE062D1E81740F0072E5FE /* NetworkCaller.swift */,
 			);
 			name = Network;
@@ -328,6 +334,7 @@
 				24B897021E7D962D00F3F8A0 /* UIViewExtensions.swift in Sources */,
 				2448E27C1E7DAC36001F682A /* KeyboardableView.swift in Sources */,
 				242565C51E7ECFA200C246A1 /* ConsoleLogWriter.swift in Sources */,
+				24BD04C61E83C86C00C95BE9 /* INetworkCaller.swift in Sources */,
 				24B897041E7D986800F3F8A0 /* StandardButton.swift in Sources */,
 				242565CA1E7EDB9D00C246A1 /* Configuration.swift in Sources */,
 				24B896F81E7D943500F3F8A0 /* MainViewController.swift in Sources */,
@@ -338,6 +345,7 @@
 				242565D21E7EE79000C246A1 /* Container.swift in Sources */,
 				242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */,
 				242565C01E7ECCC700C246A1 /* Logger.swift in Sources */,
+				24BD04C81E83CC6000C95BE9 /* INetworkAuthenticator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

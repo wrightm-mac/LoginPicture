@@ -11,6 +11,17 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    //  MARK:   Dependency Injection...
+    
+    var container = Container {
+        container in
+        
+        container.register(forType: INetworkCaller.self) { _ in NetworkCaller()}
+    }
+    
+    
+    // MARK:    Standard stuff...
+    
     var window: UIWindow?
 
 

@@ -9,16 +9,11 @@
 import Foundation
 
 
-open class NetworkCall {
-    
-    public typealias NetworkResponseFunc = (Data?) -> Void
-    
+open class NetworkCaller: INetworkCaller {
     
     // MARK:    Fields...
     
     private let basePath: String
-    
-    public private(set) var url: String
     
     public private(set) var headers = [String: String]()
     
@@ -31,37 +26,58 @@ open class NetworkCall {
     
     // MARK:    Initialisers...
     
-    public init(url: String) {
-        self.url = url
-        
+    public init() {
         let configuration = Configuration()
         basePath = configuration["BaseUrl"].string
     }
     
     
-    // MARK:    Methods...
+    // MARK:    'INetworkCaller'...
     
-    open func withHeader(name: String, value: String) -> NetworkCall {
+    open func withHeader(name: String, value: String) -> INetworkCaller {
         headers[name] = value
         
         return self
     }
     
-    open func withParameter(name: String, value: String) -> NetworkCall {
+    open func withParameter(name: String, value: String) -> INetworkCaller {
         parameters[name] = value
         
         return self
     }
     
-    open func get(callback: @escaping NetworkResponseFunc) {
-        doCall(httpMethod: "GET", callback: callback)
+    open var authenticator: INetworkAuthenticator? {
+        return nil
     }
     
-    open func post(callback: @escaping NetworkResponseFunc) {
-        doCall(httpMethod: "POST", callback: callback)
+    open func authenticate(username: String, password: String) -> INetworkCaller {
+        if let authenticator = authenticator {
+            authenticator.authenticate(with: self, username: username, password: password)
+        }
+        
+        return self
     }
     
-    private func doCall(httpMethod: String, callback: @escaping NetworkResponseFunc) {
+    open func get(url: String, callback: @escaping NetworkCallResponseFunc) {
+        doCall(url: url, httpMethod: "GET", callback: callback)
+    }
+    
+    open func post(url: String, callback: @escaping NetworkCallResponseFunc) {
+        doCall(url: url, httpMethod: "POST", callback: callback)
+    }
+    
+    open func put(url: String, callback: @escaping NetworkCallResponseFunc) {
+        doCall(url: url, httpMethod: "PUT", callback: callback)
+    }
+    
+    open func delete(url: String, callback: @escaping NetworkCallResponseFunc) {
+        doCall(url: url, httpMethod: "DELETE", callback: callback)
+    }
+    
+    
+    // MARK:    Methods...
+
+    open func doCall(url: String,  httpMethod: String, callback: @escaping NetworkCallResponseFunc) {
         // Handle the parameters for this call...
         
         var allParameters = ""

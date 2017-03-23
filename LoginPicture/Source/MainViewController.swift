@@ -23,16 +23,17 @@ class MainViewController: UIViewController {
         loginPanel.onLogin {
             username, password in
             
-            Logger.instance.info("username=\(username) password=\(password)")
+            Logger.instance.info("username='\(username)' password='\(password)'")
             
-            NetworkCall(url: "space_64.png")
+            NetworkCaller()
+                .authenticate(username: username, password: password)
                 .withHeader(name: "Auth-abc", value: "123")
                 .withHeader(name: "Auth-pqr", value: "456")
                 .withHeader(name: "Auth-xyz", value: "789")
                 .withParameter(name: "first", value: "one&x")
                 .withParameter(name: "second", value: "two z z z")
                 .withParameter(name: "third", value: "three")
-                .post {
+                .post(url: "space_64.png") {
                     data in
                     
                     DispatchQueue.main.async {
