@@ -16,6 +16,8 @@
 		242565CF1E7EDF9F00C246A1 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 242565CE1E7EDF9F00C246A1 /* Configuration.plist */; };
 		242565D21E7EE79000C246A1 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565D11E7EE79000C246A1 /* Container.swift */; };
 		2448E27C1E7DAC36001F682A /* KeyboardableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448E27B1E7DAC36001F682A /* KeyboardableView.swift */; };
+		244B875D1E856A50009D1B46 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244B875C1E856A50009D1B46 /* StringExtensions.swift */; };
+		244B87611E8577D6009D1B46 /* Sha1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244B87601E8577D6009D1B46 /* Sha1.swift */; };
 		24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */; };
 		24B896DA1E7D93E700F3F8A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B896D81E7D93E700F3F8A0 /* Main.storyboard */; };
 		24B896DC1E7D93E700F3F8A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24B896DB1E7D93E700F3F8A0 /* Assets.xcassets */; };
@@ -53,6 +55,9 @@
 		242565CE1E7EDF9F00C246A1 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Configuration.plist; path = Source/Configuration.plist; sourceTree = "<group>"; };
 		242565D11E7EE79000C246A1 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Container.swift; path = Source/Container.swift; sourceTree = "<group>"; };
 		2448E27B1E7DAC36001F682A /* KeyboardableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardableView.swift; path = Source/KeyboardableView.swift; sourceTree = "<group>"; };
+		244B87591E8569CB009D1B46 /* LoginPicture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoginPicture-Bridging-Header.h"; sourceTree = "<group>"; };
+		244B875C1E856A50009D1B46 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Source/StringExtensions.swift; sourceTree = "<group>"; };
+		244B87601E8577D6009D1B46 /* Sha1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sha1.swift; path = Source/Sha1.swift; sourceTree = "<group>"; };
 		24B896D11E7D93E700F3F8A0 /* LoginPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24B896D91E7D93E700F3F8A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -118,6 +123,15 @@
 				242565D11E7EE79000C246A1 /* Container.swift */,
 			);
 			name = DependencyInjection;
+			sourceTree = "<group>";
+		};
+		244B87581E856875009D1B46 /* Encryption */ = {
+			isa = PBXGroup;
+			children = (
+				244B87591E8569CB009D1B46 /* LoginPicture-Bridging-Header.h */,
+				244B87601E8577D6009D1B46 /* Sha1.swift */,
+			);
+			name = Encryption;
 			sourceTree = "<group>";
 		};
 		24B896C81E7D93E600F3F8A0 = {
@@ -197,6 +211,7 @@
 			children = (
 				242565C81E7EDB8900C246A1 /* Configuration */,
 				242565D01E7EE77600C246A1 /* DependencyInjection */,
+				244B87581E856875009D1B46 /* Encryption */,
 				24B897001E7D961700F3F8A0 /* Extensions */,
 				242565C11E7ECCD000C246A1 /* Logging */,
 				24DE062A1E8163CB0072E5FE /* Network */,
@@ -207,6 +222,7 @@
 		24B897001E7D961700F3F8A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				244B875C1E856A50009D1B46 /* StringExtensions.swift */,
 				24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */,
 			);
 			name = Extensions;
@@ -273,6 +289,7 @@
 					24B896D01E7D93E600F3F8A0 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = YHP3S2XT46;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					24B896E41E7D93E700F3F8A0 = {
@@ -341,6 +358,8 @@
 				24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */,
 				242565CC1E7EDC3100C246A1 /* ConfigurationValue.swift in Sources */,
 				24DE062E1E81740F0072E5FE /* NetworkCaller.swift in Sources */,
+				244B875D1E856A50009D1B46 /* StringExtensions.swift in Sources */,
+				244B87611E8577D6009D1B46 /* Sha1.swift in Sources */,
 				24B896FC1E7D94F100F3F8A0 /* LoginPanelView.swift in Sources */,
 				242565D21E7EE79000C246A1 /* Container.swift in Sources */,
 				242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */,
@@ -485,11 +504,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = YHP3S2XT46;
 				INFOPLIST_FILE = LoginPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wrightm.LoginPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoginPicture/LoginPicture-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -498,11 +520,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = YHP3S2XT46;
 				INFOPLIST_FILE = LoginPicture/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wrightm.LoginPicture;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LoginPicture/LoginPicture-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

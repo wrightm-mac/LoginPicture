@@ -25,6 +25,11 @@ class MainViewController: UIViewController {
             
             Logger.instance.info("username='\(username)' password='\(password)'")
             
+            let sha1Password = password.sha1
+            let hex = sha1Password.hex
+            let base64 = sha1Password.base64
+            Logger.instance.info("hex='\(hex)' base64='\(base64)'")
+            
             let caller = AppDelegate.container.resolve(forType: INetworkCaller.self)!
             
             caller
