@@ -34,21 +34,22 @@ class MainViewController: UIViewController {
             
             caller
                 .authenticate(username: username, password: password)
-                .withHeader(name: "Auth-abc", value: "123")
-                .withHeader(name: "Auth-pqr", value: "456")
-                .withHeader(name: "Auth-xyz", value: "789")
-                .withParameter(name: "first", value: "one&x")
-                .withParameter(name: "second", value: "two z z z")
-                .withParameter(name: "third", value: "three")
-                .post(url: "space_64.png") {
+                .post(url: "bootcamp/image.php") {
                     data in
                     
+                    Logger.instance.debug("begin: post callback - data='\(data)'")
+                    
+                    guard let data = data else {
+                        Logger.instance.warn("no data!")
+                        return
+                    }
+                    
                     DispatchQueue.main.async {
-                        let image = UIImage(data: data!)
+                        let image = UIImage(data: data)
                         self.displayImage.image = image
                     }
                     
-                    Logger.instance.debug("kerching!!!")
+                    Logger.instance.debug("end: post callback")
             }
         }
     }

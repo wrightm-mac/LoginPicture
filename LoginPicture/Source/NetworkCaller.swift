@@ -47,7 +47,7 @@ open class NetworkCaller: INetworkCaller {
     }
     
     open var authenticator: INetworkAuthenticator? {
-        return nil
+        return NetworkUserAuthenticator()
     }
     
     open func authenticate(username: String, password: String) -> INetworkCaller {
@@ -100,7 +100,7 @@ open class NetworkCaller: INetworkCaller {
         // Set up the request for this call...
         
         let fullPath = "\(basePath)/\(serviceName)/\(encodedPath)"
-        Logger.instance.debug("[fullPath=\(fullPath)]")
+        Logger.instance.debug("*********** [fullPath=\(fullPath)]")
         
         guard let url = URL(string: fullPath) else {
             Logger.instance.error("could not create url")
@@ -113,7 +113,7 @@ open class NetworkCaller: INetworkCaller {
         // Handle the headers for this call...
         
         for (headerName, headerValue) in headers {
-            request.setValue(headerName, forHTTPHeaderField: headerValue)
+            request.setValue(headerValue, forHTTPHeaderField: headerName)
         }
         
         // Perform the request...

@@ -33,9 +33,10 @@ open class Sha1 {
     }
     
     
-    // MARK:    Conversions...
+    // MARK:    Data...
     
     open var uint8Array: [UInt8] {
+        // Provides direct access to the buffer - not safe...
         return buffer
     }
     
@@ -45,5 +46,17 @@ open class Sha1 {
     
     open var base64: String {
         return Data(bytes: buffer).base64EncodedString()
+    }
+}
+
+
+public extension String {
+    
+    public var utf8Data: Data {
+        return data(using: String.Encoding.utf8)!
+    }
+
+    public var sha1: Sha1 {
+        return Sha1(from: utf8Data)
     }
 }

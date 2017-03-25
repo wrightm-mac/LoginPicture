@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240940341E866CBF0079E76A /* NetworkUserAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940331E866CBE0079E76A /* NetworkUserAuthenticator.swift */; };
 		242565C01E7ECCC700C246A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565BF1E7ECCC700C246A1 /* Logger.swift */; };
 		242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C21E7ECD0100C246A1 /* LogLevel.swift */; };
 		242565C51E7ECFA200C246A1 /* ConsoleLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */; };
@@ -16,7 +17,6 @@
 		242565CF1E7EDF9F00C246A1 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = 242565CE1E7EDF9F00C246A1 /* Configuration.plist */; };
 		242565D21E7EE79000C246A1 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565D11E7EE79000C246A1 /* Container.swift */; };
 		2448E27C1E7DAC36001F682A /* KeyboardableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2448E27B1E7DAC36001F682A /* KeyboardableView.swift */; };
-		244B875D1E856A50009D1B46 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244B875C1E856A50009D1B46 /* StringExtensions.swift */; };
 		244B87611E8577D6009D1B46 /* Sha1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 244B87601E8577D6009D1B46 /* Sha1.swift */; };
 		24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */; };
 		24B896DA1E7D93E700F3F8A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B896D81E7D93E700F3F8A0 /* Main.storyboard */; };
@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		240940331E866CBE0079E76A /* NetworkUserAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkUserAuthenticator.swift; path = Source/NetworkUserAuthenticator.swift; sourceTree = "<group>"; };
 		242565BF1E7ECCC700C246A1 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
 		242565C21E7ECD0100C246A1 /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogLevel.swift; path = Source/LogLevel.swift; sourceTree = "<group>"; };
 		242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleLogWriter.swift; path = Source/ConsoleLogWriter.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		242565D11E7EE79000C246A1 /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Container.swift; path = Source/Container.swift; sourceTree = "<group>"; };
 		2448E27B1E7DAC36001F682A /* KeyboardableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyboardableView.swift; path = Source/KeyboardableView.swift; sourceTree = "<group>"; };
 		244B87591E8569CB009D1B46 /* LoginPicture-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LoginPicture-Bridging-Header.h"; sourceTree = "<group>"; };
-		244B875C1E856A50009D1B46 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Source/StringExtensions.swift; sourceTree = "<group>"; };
 		244B87601E8577D6009D1B46 /* Sha1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sha1.swift; path = Source/Sha1.swift; sourceTree = "<group>"; };
 		24B896D11E7D93E700F3F8A0 /* LoginPicture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginPicture.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24B896D41E7D93E700F3F8A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -222,7 +222,6 @@
 		24B897001E7D961700F3F8A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				244B875C1E856A50009D1B46 /* StringExtensions.swift */,
 				24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */,
 			);
 			name = Extensions;
@@ -234,6 +233,7 @@
 				24BD04C71E83CC6000C95BE9 /* INetworkAuthenticator.swift */,
 				24BD04C51E83C86C00C95BE9 /* INetworkCaller.swift */,
 				24DE062D1E81740F0072E5FE /* NetworkCaller.swift */,
+				240940331E866CBE0079E76A /* NetworkUserAuthenticator.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -355,10 +355,10 @@
 				24B897041E7D986800F3F8A0 /* StandardButton.swift in Sources */,
 				242565CA1E7EDB9D00C246A1 /* Configuration.swift in Sources */,
 				24B896F81E7D943500F3F8A0 /* MainViewController.swift in Sources */,
+				240940341E866CBF0079E76A /* NetworkUserAuthenticator.swift in Sources */,
 				24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */,
 				242565CC1E7EDC3100C246A1 /* ConfigurationValue.swift in Sources */,
 				24DE062E1E81740F0072E5FE /* NetworkCaller.swift in Sources */,
-				244B875D1E856A50009D1B46 /* StringExtensions.swift in Sources */,
 				244B87611E8577D6009D1B46 /* Sha1.swift in Sources */,
 				24B896FC1E7D94F100F3F8A0 /* LoginPanelView.swift in Sources */,
 				242565D21E7EE79000C246A1 /* Container.swift in Sources */,
