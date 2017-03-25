@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		240940341E866CBF0079E76A /* NetworkUserAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940331E866CBE0079E76A /* NetworkUserAuthenticator.swift */; };
+		240940381E8691370079E76A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940371E8691370079E76A /* StringExtensions.swift */; };
 		242565C01E7ECCC700C246A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565BF1E7ECCC700C246A1 /* Logger.swift */; };
 		242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C21E7ECD0100C246A1 /* LogLevel.swift */; };
 		242565C51E7ECFA200C246A1 /* ConsoleLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		240940331E866CBE0079E76A /* NetworkUserAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkUserAuthenticator.swift; path = Source/NetworkUserAuthenticator.swift; sourceTree = "<group>"; };
+		240940371E8691370079E76A /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Source/StringExtensions.swift; sourceTree = "<group>"; };
 		242565BF1E7ECCC700C246A1 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
 		242565C21E7ECD0100C246A1 /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogLevel.swift; path = Source/LogLevel.swift; sourceTree = "<group>"; };
 		242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleLogWriter.swift; path = Source/ConsoleLogWriter.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */,
+				240940371E8691370079E76A /* StringExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				240940341E866CBF0079E76A /* NetworkUserAuthenticator.swift in Sources */,
 				24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */,
 				242565CC1E7EDC3100C246A1 /* ConfigurationValue.swift in Sources */,
+				240940381E8691370079E76A /* StringExtensions.swift in Sources */,
 				24DE062E1E81740F0072E5FE /* NetworkCaller.swift in Sources */,
 				244B87611E8577D6009D1B46 /* Sha1.swift in Sources */,
 				24B896FC1E7D94F100F3F8A0 /* LoginPanelView.swift in Sources */,
