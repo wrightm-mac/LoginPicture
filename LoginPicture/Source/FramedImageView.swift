@@ -19,6 +19,8 @@ class FramedImageView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        Logger.instance.debug("image-scale=\(self.imageView.image?.scale)")
+        
         imageView.applyBorder(cornerSize: .medium, width: .thin, color: .black)
     }
     
@@ -28,5 +30,9 @@ class FramedImageView: UIView {
         backgroundColor = borderColor
         imageView.frame = CGRect(x: borderWidth, y: borderWidth,
                                  width: frame.width - borderWidth * 2.0, height: frame.height - borderWidth * 2.0)
+    }
+    
+    @IBAction func pinchScale(_ sender: UIPinchGestureRecognizer) {
+        imageView.transform = imageView.transform.scaledBy(x: sender.scale, y: sender.scale)
     }
 }
