@@ -11,6 +11,10 @@ import Foundation
 
 public extension String {
     
+    public func toData(using: String.Encoding = .utf8, allowLossyConversion: Bool = false) -> Data? {
+        return self.data(using: using, allowLossyConversion: allowLossyConversion)
+    }
+    
     /**
      Base64 encode.
      

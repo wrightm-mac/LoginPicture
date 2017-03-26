@@ -11,9 +11,9 @@
     <dict>
         <key>LogLevel</key>
         <string>debug,info,event,warn,error</string>
-        <key>BaseUrl</key>
+        <key>BaseUrlX</key>
         <string>http://localhost:2108</string>
-        <key>BaseUrlEx</key>
+        <key>BaseUrl</key>
         <string>https://mobility.cleverlance.com</string>
         <key>LoginService</key>
         <string>bootcamp/image.php</string>

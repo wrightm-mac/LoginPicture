@@ -243,9 +243,9 @@
 				24BD04C71E83CC6000C95BE9 /* INetworkAuthenticator.swift */,
 				24BD04C51E83C86C00C95BE9 /* INetworkCaller.swift */,
 				24DE062D1E81740F0072E5FE /* NetworkCaller.swift */,
+				241FADDD1E87EE24003A98E8 /* INetworkDownloadCaller.swift */,
 				241FADDB1E87EDAF003A98E8 /* NetworkDownloadCaller.swift */,
 				240940331E866CBE0079E76A /* NetworkUserAuthenticator.swift */,
-				241FADDD1E87EE24003A98E8 /* INetworkDownloadCaller.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";

@@ -25,6 +25,11 @@ public protocol INetworkCaller {
     func withHeader(name: String, value: String) -> INetworkCaller
     
     func withParameter(name: String, value: String) -> INetworkCaller
+
+    
+    // Body...
+    
+    func body(_ contents: String) -> INetworkCaller
     
     
     // Authentication...

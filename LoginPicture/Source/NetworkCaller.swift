@@ -19,6 +19,8 @@ open class NetworkCaller: INetworkCaller {
     
     public private(set) var parameters = [String: String]()
     
+    public private(set) var body = ""
+    
     open var serviceName: String {
         return "topic"
     }
@@ -46,6 +48,12 @@ open class NetworkCaller: INetworkCaller {
         return self
     }
     
+    open func body(_ contents: String) -> INetworkCaller {
+        body = contents
+        
+        return self
+    }
+
     open var authenticator: INetworkAuthenticator? {
         return NetworkUserAuthenticator()
     }
@@ -116,6 +124,12 @@ open class NetworkCaller: INetworkCaller {
             request.setValue(headerValue, forHTTPHeaderField: headerName)
         }
         
+        
+        // Set the request body...
+        
+        request.httpBody = body.toData()
+        
+
         // Perform the request...
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) {
