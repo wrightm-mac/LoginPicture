@@ -11,7 +11,16 @@ import Foundation
 
 extension Data {
     
-    func toString(encoding: String.Encoding = .utf8) -> String? {
+    public func toString(encoding: String.Encoding = .utf8) -> String? {
         return String(data: self, encoding: encoding)
+    }
+    
+    public var json: [String: AnyObject]? {
+        do {
+            return try JSONSerialization.jsonObject(with: self) as? [String: AnyObject]
+        }
+        catch {
+            return nil
+        }
     }
 }

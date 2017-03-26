@@ -37,13 +37,28 @@ class MainViewController: UIViewController {
                     
                     Logger.instance.debug("begin: post callback - response-length=\(response?.toString()?.characters.count ?? -1)")
                     
-                    guard let base64 = response?.toString(), let data = base64.fromBase64 else {
-                        Logger.instance.warn("no data!")
+                    guard let data = response else {
+                        Logger.instance.warn("response is nil")
+                        return
+                    }
+                    
+                    guard let json = data.json else {
+                        Logger.instance.warn("cannot parse json from response")
+                        return
+                    }
+                    
+                    guard let imageString = json["image"] as? String else {
+                        Logger.instance.warn("response json has no 'image' element")
+                        return
+                    }
+                    
+                    guard let unencodedImageData = imageString.fromBase64 else {
+                        Logger.instance.warn("cannot decode image base64")
                         return
                     }
                     
                     DispatchQueue.main.async {
-                        let image = UIImage(data: data)
+                        let image = UIImage(data: unencodedImageData)
                         self.displayImage.image = image
                     }
                     

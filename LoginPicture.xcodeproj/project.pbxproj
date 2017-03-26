@@ -230,9 +230,9 @@
 		24B897001E7D961700F3F8A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */,
-				240940371E8691370079E76A /* StringExtensions.swift */,
 				241FADD91E87EA37003A98E8 /* DataExtensions.swift */,
+				240940371E8691370079E76A /* StringExtensions.swift */,
+				24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
