@@ -25,11 +25,6 @@ class MainViewController: UIViewController {
             
             Logger.instance.info("username='\(username)' password='\(password)'")
             
-            let sha1Password = password.sha1
-            let hex = sha1Password.hex
-            let base64 = sha1Password.base64
-            Logger.instance.info("hex='\(hex)' base64='\(base64)'")
-            
             let caller = AppDelegate.container.resolve(forType: INetworkDownloadCaller.self)!
             
             caller
@@ -40,7 +35,7 @@ class MainViewController: UIViewController {
                 .post(url: "bootcamp/image.php") {
                     response in
                     
-                    Logger.instance.debug("begin: post callback - response='\(response?.toString() ?? "***")'")
+                    Logger.instance.debug("begin: post callback - response-length=\(response?.toString()?.characters.count ?? -1)")
                     
                     guard let base64 = response?.toString(), let data = base64.fromBase64 else {
                         Logger.instance.warn("no data!")

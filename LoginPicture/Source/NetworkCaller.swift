@@ -85,9 +85,8 @@ open class NetworkCaller: INetworkCaller {
     
     // MARK:    Methods...
 
-    open func doCall(url: String,  httpMethod: String, callback: @escaping NetworkCallResponseFunc) {
-        // Handle the parameters for this call...
-        
+    private func doCall(url: String,  httpMethod: String, callback: @escaping NetworkCallResponseFunc) {
+        // Build a string of parameters to be appended to the url...
         var allParameters = ""
         for (parameterName, parameterValue) in parameters {
             let parameter = "\(parameterName)=\(parameterValue)"
@@ -99,22 +98,39 @@ open class NetworkCaller: INetworkCaller {
             allParameters.append(parameter)
         }
     
+        // Append the parameter string to the url & encode to make it safe...
         let pathWithParameters = (allParameters > "") ? "\(url)?\(allParameters)" : url
         guard let encodedPath = pathWithParameters.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
             Logger.instance.error("could not encode url")
             return
         }
         
-        // Set up the request for this call...
-        
+        // The full url for the call will be the basepath + service-name + parameters...
         let fullPath = "\(basePath)/\(serviceName)/\(encodedPath)"
-        Logger.instance.debug("*********** [fullPath=\(fullPath)]")
-        
+
+        // Call the function that will make the call...
+        invoke(httpMethod: httpMethod, fullPath: fullPath, headers: headers, body: body, callback: callback)
+    }
+    
+    /**
+        Makes a network call based on the all of the information known at this
+        point.
+     
+        Override this call to change the call mechanism.
+     
+        - parameter httpMethod: HTTP method to invoke.
+        - parameter fullPath:   The full path of the service to invoke - this will contain any parameters.
+        - parameter headers:    All headers for the call - these will include any session/auth headers.
+        - parameter body:       The body of the call.
+        - parameter callback:   The function to be invoked when the call has completed.
+    */
+    open func invoke(httpMethod: String, fullPath: String, headers: [String: String], body: String, callback: @escaping NetworkCallResponseFunc) {
         guard let url = URL(string: fullPath) else {
             Logger.instance.error("could not create url")
+            callback(nil)
             return
         }
-
+        
         let request = NSMutableURLRequest(url: url)
         request.httpMethod = httpMethod
         
@@ -129,16 +145,14 @@ open class NetworkCaller: INetworkCaller {
         
         request.httpBody = body.toData()
         
-
+        
         // Perform the request...
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) {
             data, response, error in
             
-            Logger.instance.debug("[data=\(data)][response=\(response)][error=\(error)]")
-            
             guard error == nil else {
-                Logger.instance.error("could not load image at '\(url)'")
+                Logger.instance.warn("error loading from '\(fullPath)' - (\(error))")
                 callback(nil)
                 return
             }
