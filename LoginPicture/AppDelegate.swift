@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         container in
         
         container.register(forType: INetworkCaller.self) { _ in NetworkCaller()}
+        container.register(forType: INetworkDownloadCaller.self) { _ in NetworkDownloadCaller()}
     }
     
     

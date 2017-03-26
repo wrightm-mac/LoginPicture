@@ -14,7 +14,7 @@
         <key>BaseUrl</key>
         <string>http://localhost:2108</string>
         <key>BaseUrlEx</key>
-        <string>https://mobility.cleverlance.com/download/</string>
+        <string>https://mobility.cleverlance.com</string>
         <key>LoginService</key>
         <string>bootcamp/image.php</string>
     </dict>

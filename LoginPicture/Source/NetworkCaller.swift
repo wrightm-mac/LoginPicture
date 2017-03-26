@@ -20,7 +20,7 @@ open class NetworkCaller: INetworkCaller {
     public private(set) var parameters = [String: String]()
     
     open var serviceName: String {
-        return "topics"
+        return "topic"
     }
 
     

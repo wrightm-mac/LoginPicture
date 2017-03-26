@@ -25,11 +25,7 @@ public extension String {
      
         From `stackoverflow.com/questions/29365145/how-to-encode-string-to-base64-in-swift`.
     */
-    public var fromBase64: String? {
-        guard let data = Data(base64Encoded: self) else {
-            return nil
-        }
-        
-        return String(data: data, encoding: .utf8)
+    public var fromBase64: Data? {
+        return Data(base64Encoded: self)
     }
 }

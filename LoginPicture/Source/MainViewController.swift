@@ -30,16 +30,18 @@ class MainViewController: UIViewController {
             let base64 = sha1Password.base64
             Logger.instance.info("hex='\(hex)' base64='\(base64)'")
             
-            let caller = AppDelegate.container.resolve(forType: INetworkCaller.self)!
+            let caller = AppDelegate.container.resolve(forType: INetworkDownloadCaller.self)!
             
             caller
+                .withHeader(name: "Content-Type", value: "application/x-www-form-urlencoded")
+                .withHeader(name: "Host", value: "mobility.cleverlance.com")
                 .authenticate(username: username, password: password)
                 .post(url: "bootcamp/image.php") {
-                    data in
+                    response in
                     
-                    Logger.instance.debug("begin: post callback - data='\(data)'")
+                    Logger.instance.debug("begin: post callback - response='\(response?.toString() ?? "***")'")
                     
-                    guard let data = data else {
+                    guard let base64 = response?.toString(), let data = base64.fromBase64 else {
                         Logger.instance.warn("no data!")
                         return
                     }
