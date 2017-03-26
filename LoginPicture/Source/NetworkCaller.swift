@@ -9,6 +9,19 @@
 import Foundation
 
 
+/**
+    Implements a network call.
+ 
+    Ultimately, the full-url of the network call is built from 3 elements:
+ 
+    - *base-url* - this is read from the `Configuration.plist` file.
+    - *service-name* - this provided from the `serviceName` property. Derived classes
+                        should override this property to provide a meaningful name.
+    - *name* - the name of the method of the service to invoke.
+ 
+    The full *URL*, that will be passed to the `invoke` function for action, will
+    be of the form: `<base-path>/<service-name>/<method-name>?<parameter-list>`.
+*/
 open class NetworkCaller: INetworkCaller {
     
     // MARK:    Fields...
@@ -21,6 +34,9 @@ open class NetworkCaller: INetworkCaller {
     
     public private(set) var body = ""
     
+    /**
+        Override this property to provide a meaningful name for your network service.
+    */
     open var serviceName: String {
         return "topic"
     }
@@ -66,26 +82,26 @@ open class NetworkCaller: INetworkCaller {
         return self
     }
     
-    open func get(url: String, callback: @escaping NetworkCallResponseFunc) {
-        doCall(url: url, httpMethod: "GET", callback: callback)
+    open func get(name: String, callback: @escaping NetworkCallResponseFunc) {
+        doCall(name: name, httpMethod: "GET", callback: callback)
     }
     
-    open func post(url: String, callback: @escaping NetworkCallResponseFunc) {
-        doCall(url: url, httpMethod: "POST", callback: callback)
+    open func post(name: String, callback: @escaping NetworkCallResponseFunc) {
+        doCall(name: name, httpMethod: "POST", callback: callback)
     }
     
-    open func put(url: String, callback: @escaping NetworkCallResponseFunc) {
-        doCall(url: url, httpMethod: "PUT", callback: callback)
+    open func put(name: String, callback: @escaping NetworkCallResponseFunc) {
+        doCall(name: name, httpMethod: "PUT", callback: callback)
     }
     
-    open func delete(url: String, callback: @escaping NetworkCallResponseFunc) {
-        doCall(url: url, httpMethod: "DELETE", callback: callback)
+    open func delete(name: String, callback: @escaping NetworkCallResponseFunc) {
+        doCall(name: name, httpMethod: "DELETE", callback: callback)
     }
     
     
     // MARK:    Methods...
 
-    private func doCall(url: String,  httpMethod: String, callback: @escaping NetworkCallResponseFunc) {
+    private func doCall(name: String,  httpMethod: String, callback: @escaping NetworkCallResponseFunc) {
         // Build a string of parameters to be appended to the url...
         var allParameters = ""
         for (parameterName, parameterValue) in parameters {
@@ -99,7 +115,7 @@ open class NetworkCaller: INetworkCaller {
         }
     
         // Append the parameter string to the url & encode to make it safe...
-        let pathWithParameters = (allParameters > "") ? "\(url)?\(allParameters)" : url
+        let pathWithParameters = (allParameters > "") ? "\(name)?\(allParameters)" : name
         guard let encodedPath = pathWithParameters.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) else {
             Logger.instance.error("could not encode url")
             return

@@ -32,7 +32,7 @@ class MainViewController: UIViewController {
                 .withHeader(name: "Content-Type", value: "application/x-www-form-urlencoded")
                 .withHeader(name: "Host", value: "mobility.cleverlance.com")
                 .body("username=\(username)")
-                .post(url: "bootcamp/image.php") {
+                .post(name: "bootcamp/image.php") {
                     response in
                     
                     Logger.instance.debug("begin: post callback - response-length=\(response?.toString()?.characters.count ?? -1)")
