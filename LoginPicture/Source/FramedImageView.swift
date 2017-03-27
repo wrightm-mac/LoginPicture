@@ -34,5 +34,6 @@ class FramedImageView: UIView {
     
     @IBAction func pinchScale(_ sender: UIPinchGestureRecognizer) {
         imageView.transform = imageView.transform.scaledBy(x: sender.scale, y: sender.scale)
+        sender.scale = 1
     }
 }
