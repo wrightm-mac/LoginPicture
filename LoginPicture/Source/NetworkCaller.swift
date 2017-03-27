@@ -118,23 +118,6 @@ open class NetworkCaller: INetworkCaller {
         // The full url for the call will be the basepath + service-name + parameters...
         let fullPath = "\(basePath)/\(serviceName)/\(encodedPath)"
 
-        // Call the function that will make the call...
-        invoke(httpMethod: httpMethod, fullPath: fullPath, headers: headers, body: body, callback: callback)
-    }
-    
-    /**
-        Makes a network call based on the all of the information known at this
-        point.
-     
-        Override this call to change the call mechanism.
-     
-        - parameter httpMethod: HTTP method to invoke.
-        - parameter fullPath:   The full path of the service to invoke - this will contain any parameters.
-        - parameter headers:    All headers for the call - these will include any session/auth headers.
-        - parameter body:       The body of the call.
-        - parameter callback:   The function to be invoked when the call has completed.
-    */
-    open func invoke(httpMethod: String, fullPath: String, headers: [String: String], body: String, callback: @escaping NetworkCallResponseFunc) {
         guard let url = URL(string: fullPath) else {
             Logger.instance.error("could not create url")
             callback(nil)
@@ -145,23 +128,32 @@ open class NetworkCaller: INetworkCaller {
         request.httpMethod = httpMethod
         
         // Handle the headers for this call...
-        
         for (headerName, headerValue) in headers {
             request.setValue(headerValue, forHTTPHeaderField: headerName)
         }
         
-        
         // Set the request body...
-        
         request.httpBody = body.toData()
         
         // Perform the request...
-        
+        invoke(request, callback: callback)
+    }
+    
+    /**
+        Makes a network call based on the all of the information known at this
+        point.
+     
+        Override this call to change the call mechanism.
+     
+        - parameter request:    Initialised `URLRequest`.
+        - parameter callback:   The function to be invoked when the call has completed.
+    */
+    open func invoke(_ request: NSMutableURLRequest, callback: @escaping NetworkCallResponseFunc) {
         let task = URLSession.shared.dataTask(with: request as URLRequest) {
             data, response, error in
             
             guard error == nil else {
-                Logger.instance.warn("error loading from '\(fullPath)' - (\(error))")
+                Logger.instance.warn("error loading from '\(request.url)' - (\(error))")
                 callback(nil)
                 return
             }

@@ -12,22 +12,22 @@ import XCTest
 
 class NetworkCallerMock: NetworkCaller {
     
-    var hook: ((URLRequest?) -> Void)? = nil
+    var hook: ((NSMutableURLRequest) -> Void)? = nil
     
-    func testHook(hook: @escaping (URLRequest?) -> Void) -> NetworkCallerMock {
+    func test(hook: @escaping (NSMutableURLRequest) -> Void) -> NetworkCallerMock {
         self.hook = hook
         
         return self
     }
     
-    override func invoke(httpMethod: String, fullPath: String, headers: [String : String], body: String, callback: @escaping NetworkCallResponseFunc) {
+    override func invoke(_ request: NSMutableURLRequest, callback: @escaping NetworkCallResponseFunc) {
         // Don't go out onto the network - just call the testHook callback function
         // passing the URLRequest object that (IRL) will be used to service the
         // request.
         // This allows unit-tests to check whether the URLRequest has been correctly
         // set up for a call.
         
-        hook?(nil)
+        hook?(request)
     }
 }
 
@@ -39,6 +39,8 @@ class NetworkTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
+        // Not necessary to use the dependency-injection container here - but use
+        // it as an extra check...
         AppDelegate.container.register(forType: INetworkCaller.self) { _ in NetworkCallerMock() }
         caller = AppDelegate.container.resolve(forType: INetworkCaller.self) as! NetworkCallerMock
     }
@@ -47,13 +49,40 @@ class NetworkTests: XCTestCase {
         super.tearDown()
     }
     
+    
     func testGet() {
-        caller.withParameter(name: "First", value: "One")
-            .testHook {
-                urlRequest in
-                
-                XCTAssert(urlRequest.httpMethod == "GET", "request is GET")
-                
+        caller.test {
+            urlRequest in
+            
+            XCTAssert(urlRequest.httpMethod == "GET", "request is GET")
+            
             }.get(url: "dummy") { _ in }
+    }
+    
+    func testPost() {
+        caller.test {
+            urlRequest in
+            
+            XCTAssert(urlRequest.httpMethod == "POST", "request is POST")
+            
+            }.post(url: "dummy") { _ in }
+    }
+    
+    func testPut() {
+        caller.test {
+            urlRequest in
+            
+            XCTAssert(urlRequest.httpMethod == "PUT", "request is PUT")
+            
+            }.put(url: "dummy") { _ in }
+    }
+    
+    func testDelete() {
+        caller.test {
+            urlRequest in
+            
+            XCTAssert(urlRequest.httpMethod == "DELETE", "request is DELETE")
+            
+            }.delete(url: "dummy") { _ in }
     }
 }
