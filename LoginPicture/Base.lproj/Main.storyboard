@@ -27,10 +27,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPw-uc-pAZ" customClass="LoginPanel" customModule="LoginPicture" customModuleProvider="target">
-                                <rect key="frame" x="16" y="28" width="343" height="148"/>
-                                <color key="backgroundColor" red="0.67450980392156867" green="0.88235294117647056" blue="0.68627450980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="16" y="28" width="343" height="136"/>
+                                <color key="backgroundColor" red="1" green="0.97254901960784312" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="148" id="xW0-ZS-n8E"/>
+                                    <constraint firstAttribute="height" constant="136" id="xW0-ZS-n8E"/>
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3VN-kh-Dg1" customClass="FramedImage" customModule="LoginPicture" customModuleProvider="target">
@@ -39,15 +39,15 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.5607843137254902" green="0.73725490196078436" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.48627450980392156" green="0.72549019607843135" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.48627450980392156" green="0.72549019607843135" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fPw-uc-pAZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5vD-Zt-EFA"/>
                             <constraint firstItem="fPw-uc-pAZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="GOQ-Ee-sDW"/>

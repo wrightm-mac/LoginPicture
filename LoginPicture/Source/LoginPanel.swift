@@ -48,6 +48,7 @@ open class LoginPanel: KeyboardableView {
     open override func layoutSubviews() {
         super.layoutSubviews()
      
+        applyBorder(cornerSize: .small, width: .medium, color: .black)
         view.applyBorder(cornerSize: .small, width: .medium, color: .black)
         
         view.parent = self

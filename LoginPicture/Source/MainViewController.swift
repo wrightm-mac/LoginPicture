@@ -16,6 +16,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var framedImage: FramedImage!
     
     
+    // MARK:    Constants...
+    
+    let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+    
+    
     // MARK:    Overrides...
     
     override func viewDidLoad() {
@@ -81,6 +86,15 @@ class MainViewController: UIViewController {
         }
     }
     
+    override var shouldAutorotate: Bool {
+        // Lock to portrait-mode whilst login-panel is hidden...
+        return loginPanel?.isHidden ?? false
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return loginPanel?.isHidden ?? false ? UIInterfaceOrientationMask.all : UIInterfaceOrientationMask.portrait
+    }
+    
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if loginPanel.isHidden {
             setDisplayImageFrame(size: size)
@@ -96,11 +110,15 @@ class MainViewController: UIViewController {
     }
     
     open func stopActivityIndicator() {
-        //activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }
-    
+
     private func setDisplayImageFrame(size: CGSize) {
-        framedImage.frame = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)
+        let isPortrait = UIDevice.current.orientation == .portrait
+        Logger.instance.debug("orientation='\(isPortrait)'")
+        
+        
+        let statusBarHeight = isPortrait ? self.statusBarHeight : 0.0
+        framedImage.frame = CGRect(x: 0.0, y: statusBarHeight, width: size.width, height: size.height - statusBarHeight)
     }
 }

@@ -21,7 +21,7 @@ class FramedImageView: UIView {
         
         Logger.instance.debug("image-scale=\(self.imageView.image?.scale)")
         
-        imageView.applyBorder(cornerSize: .medium, width: .thin, color: .black)
+        imageView.applyBorder(cornerSize: .small, width: .medium, color: .black)
     }
     
     override func layoutSubviews() {
