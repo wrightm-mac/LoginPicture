@@ -30,7 +30,7 @@ open class NetworkUserAuthenticator: INetworkAuthenticator {
     
     open func authenticate(with caller: INetworkCaller) {
         _ = caller.withParameter(name: "username", value: username)
-                  .withHeader(name: "authorization", value: password.sha1.hex)
+                  .withHeader(name: "Authorization", value: password.sha1.hex)
                   .body(content: "username=\(username)")
     }
 }

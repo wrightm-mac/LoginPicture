@@ -50,6 +50,8 @@ class NetworkTests: XCTestCase {
     }
     
     
+    // Calling...
+    
     func testGet() {
         caller.test {
             urlRequest in
@@ -84,5 +86,88 @@ class NetworkTests: XCTestCase {
             XCTAssert(urlRequest.httpMethod == "DELETE", "request is DELETE")
             
             }.delete(url: "dummy") { _ in }
+    }
+    
+    
+    // URLs...
+    
+    func testUrl() {
+        let serviceName = "MyService"
+        
+        caller.test {
+            urlRequest in
+            
+                XCTAssert((urlRequest.url?.absoluteString.hasSuffix("/\(serviceName)")) ?? false, "url is correctly terminated")
+            
+            }.get(url: serviceName) { _ in }
+    }
+    
+    
+    // Parameters & Headers...
+    
+    func testParameter() {
+        let parameterName = "First"
+        let parameterValue = "One"
+        
+        caller
+            .test {
+            urlRequest in
+            
+                XCTAssert((urlRequest.url?.absoluteString.hasSuffix("?\(parameterName)=\(parameterValue)")) ?? false, "url contains parameter")
+            
+            }
+            .withParameter(name: parameterName, value: parameterValue)
+            .get(url: "DummyEndpoint") { _ in }
+    }
+    
+    func testHeader() {
+        let headerName = "Second"
+        let headerValue = "Two"
+        
+        caller
+            .test {
+                urlRequest in
+                
+                XCTAssert(urlRequest.allHTTPHeaderFields?.keys.contains(headerName) ?? false, "urlRequest contains header")
+                XCTAssert(urlRequest.allHTTPHeaderFields?[headerName] == headerValue, "urlRequest header is correct value")
+            }
+            .withHeader(name: headerName, value: headerValue)
+            .get(url: "DummyEndpoint") { _ in }
+    }
+    
+    
+    // Authentication...
+    
+    func testUserAuthentication() {
+        let username = "Johnny"
+        let password = "Alpha"
+        
+        caller
+            .test {
+                urlRequest in
+                
+                XCTAssert((urlRequest.url?.absoluteString.hasSuffix("?username=\(username)")) ?? false, "url contains 'username' parameter")
+                
+                XCTAssert(urlRequest.allHTTPHeaderFields?.keys.contains("Authorization") ?? false, "urlRequest contains 'Authorization' header")
+                XCTAssert(urlRequest.allHTTPHeaderFields?["Authorization"] == password.sha1.hex, "urlRequest 'Authorization' header is correct value")
+                
+                XCTAssert(urlRequest.httpBody?.toString() == "username=\(username)", "urlRequest body has correct contents")
+            }
+            .authenticate(with: NetworkUserAuthenticator(username: username, password: password))
+            .get(url: "DummyEndpoint") { _ in }
+    }
+    
+    func testTokenAuthentication() {
+        let token = "thequickbrownfoxjumpsoverthelazydog"
+        
+        caller
+            .test {
+                urlRequest in
+                
+                XCTAssert(urlRequest.allHTTPHeaderFields?.keys.contains("Auth-Token") ?? false, "urlRequest contains 'Auth-Token' header")
+                XCTAssert(urlRequest.allHTTPHeaderFields?["Auth-Token"] == token.sha1.hex, "urlRequest 'Auth-Token' header is correct value")
+            }
+            .authenticate(with: NetworkTokenAuthenticator(token: token))
+            .get(url: "DummyEndpoint") { _ in }
     }
 }

@@ -26,12 +26,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        Logger.instance.debug("hello, world!")
-
         loginPanel.onLogin {
             username, password in
-            
-            Logger.instance.info("username='\(username)' password='\(password)'")
             
             self.startActivityIndicator()
             

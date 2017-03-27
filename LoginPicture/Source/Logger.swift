@@ -38,8 +38,6 @@ open class Logger {
     // MARK:    Initialisers...
     
     private init() {
-        print("*********** Logger.\(#function) ***********")
-        
         let configuration = Configuration()
         let logLevelSetting = configuration["LogLevel"].string
         let logLevels = logLevelSetting.components(separatedBy: ",")
@@ -47,8 +45,6 @@ open class Logger {
         for logLevel in logLevels {
             let level = LogLevel(rawValue: logLevel)!
             writers[level] = ConsoleLogWriter(prefix: level.defaultPrefix)
-            
-            print("using log-level '\(level)' with default-prefix '\(level.defaultPrefix)'")
         }
     }
     

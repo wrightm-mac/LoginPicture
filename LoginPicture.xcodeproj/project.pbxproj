@@ -17,6 +17,7 @@
 		241FADE41E880BD7003A98E8 /* FramedImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 241FADE31E880BD7003A98E8 /* FramedImage.xib */; };
 		242385ED1E88F81800AF7620 /* NetworkTokenAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242385EC1E88F81800AF7620 /* NetworkTokenAuthenticator.swift */; };
 		242385EF1E88F94B00AF7620 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242385EE1E88F94B00AF7620 /* NetworkTests.swift */; };
+		242385F11E89625200AF7620 /* Sha1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242385F01E89625200AF7620 /* Sha1Tests.swift */; };
 		242565C01E7ECCC700C246A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565BF1E7ECCC700C246A1 /* Logger.swift */; };
 		242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C21E7ECD0100C246A1 /* LogLevel.swift */; };
 		242565C51E7ECFA200C246A1 /* ConsoleLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */; };
@@ -64,6 +65,7 @@
 		241FADE31E880BD7003A98E8 /* FramedImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FramedImage.xib; path = Source/FramedImage.xib; sourceTree = "<group>"; };
 		242385EC1E88F81800AF7620 /* NetworkTokenAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkTokenAuthenticator.swift; path = Source/NetworkTokenAuthenticator.swift; sourceTree = "<group>"; };
 		242385EE1E88F94B00AF7620 /* NetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		242385F01E89625200AF7620 /* Sha1Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sha1Tests.swift; sourceTree = "<group>"; };
 		242565BF1E7ECCC700C246A1 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
 		242565C21E7ECD0100C246A1 /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogLevel.swift; path = Source/LogLevel.swift; sourceTree = "<group>"; };
 		242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleLogWriter.swift; path = Source/ConsoleLogWriter.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				24B896EB1E7D93E700F3F8A0 /* Info.plist */,
 				24DE06261E814E930072E5FE /* ContainerTests.swift */,
 				242385EE1E88F94B00AF7620 /* NetworkTests.swift */,
+				242385F01E89625200AF7620 /* Sha1Tests.swift */,
 			);
 			path = LoginPictureTests;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 			files = (
 				242385EF1E88F94B00AF7620 /* NetworkTests.swift in Sources */,
 				24DE06271E814E930072E5FE /* ContainerTests.swift in Sources */,
+				242385F11E89625200AF7620 /* Sha1Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
