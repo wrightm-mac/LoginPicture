@@ -56,6 +56,8 @@ open class LoginPanel: KeyboardableView {
     }
     
     open override func endEditing(sender: UITextField) {
+        super.endEditing(sender: sender)
+        
         if sender == view.usernameTextField {
             view.passwordTextField.becomeFirstResponder()
         }

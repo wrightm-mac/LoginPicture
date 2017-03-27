@@ -56,7 +56,32 @@ open class KeyboardableView: UIView {
     
     open func hideKeyboard() {}
     
-    open func beginEditing(sender: UITextField) {}
+    open func beginEditing(sender: UITextField) {
+        visitChildren(recurse: true) {
+            view in
+            
+            if let textField = view as? UITextField {
+                if textField != sender {
+                    self.unfocusStyle(textField: textField)
+                }
+            }
+        }
+
+        focusStyle(textField: sender)
+    }
     
-    open func endEditing(sender: UITextField) {}
+    open func endEditing(sender: UITextField) {
+        unfocusStyle(textField: sender)
+    }
+    
+    
+    // MARK:    Behaviours -- override to provide custom styling for fields..
+    
+    open func focusStyle(textField: UITextField) {
+        textField.applyShadow()
+    }
+    
+    open func unfocusStyle(textField: UITextField) {
+        textField.removeShadow()
+    }
 }

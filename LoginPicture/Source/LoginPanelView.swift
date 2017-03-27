@@ -28,6 +28,8 @@ class LoginPanelView: UIView {
     
     open override func awakeFromNib() {
         super.awakeFromNib()
+        
+        //usernameTextField.applyBorder(cornerSize: .small, width: .thick, color: .white)
     }
     
     
