@@ -20,7 +20,7 @@ open class NetworkUserAuthenticator: INetworkAuthenticator {
     
     // MARK:    Initialiser...
     
-    public init(username: String, password: String ) {
+    public init(username: String, password: String) {
         self.username = username
         self.password = password
     }
@@ -32,6 +32,5 @@ open class NetworkUserAuthenticator: INetworkAuthenticator {
         _ = caller.withParameter(name: "username", value: username)
                   .withHeader(name: "authorization", value: password.sha1.hex)
                   .body(content: "username=\(username)")
-
     }
 }

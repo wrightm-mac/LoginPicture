@@ -15,6 +15,7 @@
 		241FADE01E880B3D003A98E8 /* FramedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FADDF1E880B3D003A98E8 /* FramedImage.swift */; };
 		241FADE21E880BA7003A98E8 /* FramedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FADE11E880BA7003A98E8 /* FramedImageView.swift */; };
 		241FADE41E880BD7003A98E8 /* FramedImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 241FADE31E880BD7003A98E8 /* FramedImage.xib */; };
+		242385ED1E88F81800AF7620 /* NetworkTokenAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242385EC1E88F81800AF7620 /* NetworkTokenAuthenticator.swift */; };
 		242565C01E7ECCC700C246A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565BF1E7ECCC700C246A1 /* Logger.swift */; };
 		242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C21E7ECD0100C246A1 /* LogLevel.swift */; };
 		242565C51E7ECFA200C246A1 /* ConsoleLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */; };
@@ -61,6 +62,7 @@
 		241FADDF1E880B3D003A98E8 /* FramedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FramedImage.swift; path = Source/FramedImage.swift; sourceTree = "<group>"; };
 		241FADE11E880BA7003A98E8 /* FramedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FramedImageView.swift; path = Source/FramedImageView.swift; sourceTree = "<group>"; };
 		241FADE31E880BD7003A98E8 /* FramedImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FramedImage.xib; path = Source/FramedImage.xib; sourceTree = "<group>"; };
+		242385EC1E88F81800AF7620 /* NetworkTokenAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkTokenAuthenticator.swift; path = Source/NetworkTokenAuthenticator.swift; sourceTree = "<group>"; };
 		242565BF1E7ECCC700C246A1 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
 		242565C21E7ECD0100C246A1 /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogLevel.swift; path = Source/LogLevel.swift; sourceTree = "<group>"; };
 		242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleLogWriter.swift; path = Source/ConsoleLogWriter.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				24DE062D1E81740F0072E5FE /* NetworkCaller.swift */,
 				241FADDD1E87EE24003A98E8 /* INetworkDownloadCaller.swift */,
 				241FADDB1E87EDAF003A98E8 /* NetworkDownloadCaller.swift */,
+				242385EC1E88F81800AF7620 /* NetworkTokenAuthenticator.swift */,
 				240940331E866CBE0079E76A /* NetworkUserAuthenticator.swift */,
 			);
 			name = Network;
@@ -380,6 +383,7 @@
 				24B897041E7D986800F3F8A0 /* StandardButton.swift in Sources */,
 				242565CA1E7EDB9D00C246A1 /* Configuration.swift in Sources */,
 				24B896F81E7D943500F3F8A0 /* MainViewController.swift in Sources */,
+				242385ED1E88F81800AF7620 /* NetworkTokenAuthenticator.swift in Sources */,
 				240940341E866CBF0079E76A /* NetworkUserAuthenticator.swift in Sources */,
 				24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */,
 				241FADDC1E87EDAF003A98E8 /* NetworkDownloadCaller.swift in Sources */,
