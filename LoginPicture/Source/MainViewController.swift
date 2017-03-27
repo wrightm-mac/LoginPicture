@@ -12,6 +12,7 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var loginPanel: LoginPanel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var framedImage: FramedImage!
     
     
@@ -27,8 +28,9 @@ class MainViewController: UIViewController {
             
             Logger.instance.info("username='\(username)' password='\(password)'")
             
-            let caller = AppDelegate.container.resolve(forType: INetworkDownloadCaller.self)!
+            self.startActivityIndicator()
             
+            let caller = AppDelegate.container.resolve(forType: INetworkDownloadCaller.self)!
             caller
                 .authenticate(with: NetworkUserAuthenticator(username: username, password: password))
                 .withHeader(name: "Content-Type", value: "application/x-www-form-urlencoded")
@@ -38,6 +40,7 @@ class MainViewController: UIViewController {
                     
                     Logger.instance.debug("begin: post callback - response-length=\(response?.toString()?.characters.count ?? -1)")
                     defer {
+                        self.stopActivityIndicator()
                         Logger.instance.debug("end: post callback")
                     }
                     
@@ -86,6 +89,16 @@ class MainViewController: UIViewController {
     
     
     // MARK:    Methods...
+    
+    open func startActivityIndicator() {
+        activityIndicator.centerInSuperview()
+        activityIndicator.startAnimating()
+    }
+    
+    open func stopActivityIndicator() {
+        //activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
     
     private func setDisplayImageFrame(size: CGSize) {
         framedImage.frame = CGRect(x: 0.0, y: 0.0, width: size.width, height: size.height)

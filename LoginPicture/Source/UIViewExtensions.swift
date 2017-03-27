@@ -28,6 +28,14 @@ public extension UIView {
         subviews.forEach { view in view.removeFromSuperview() }
     }
     
+    public func centerInSuperview() {
+        guard let superview = superview else {
+            return
+        }
+        
+        frame = CGRect(x: (superview.frame.width - frame.width) / 2.0, y: (superview.frame.height - frame.height) / 2.0, width: frame.width, height: frame.height)
+    }
+    
     
     // MARK:    Nib...
     

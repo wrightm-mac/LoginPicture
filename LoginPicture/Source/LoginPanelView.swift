@@ -13,6 +13,7 @@ class LoginPanelView: UIView {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
     typealias LoginPressedFunc = (String, String) -> Void
