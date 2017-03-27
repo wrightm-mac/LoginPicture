@@ -11,5 +11,5 @@ import Foundation
 
 public protocol INetworkAuthenticator {
     
-    func authenticate(with: INetworkCaller, username: String, password: String)
+    func authenticate(with: INetworkCaller)
 }

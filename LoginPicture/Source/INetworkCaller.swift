@@ -29,14 +29,12 @@ public protocol INetworkCaller {
     
     // Body...
     
-    func body(_ contents: String) -> INetworkCaller
+    func body(content: String) -> INetworkCaller
     
     
     // Authentication...
     
-    var authenticator: INetworkAuthenticator? { get }
-    
-    func authenticate(username: String, password: String) -> INetworkCaller
+    func authenticate(with: INetworkAuthenticator) -> INetworkCaller
     
     
     // Call & response...

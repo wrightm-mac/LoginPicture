@@ -64,20 +64,14 @@ open class NetworkCaller: INetworkCaller {
         return self
     }
     
-    open func body(_ contents: String) -> INetworkCaller {
-        body = contents
+    open func body(content: String) -> INetworkCaller {
+        body = content
         
         return self
     }
 
-    open var authenticator: INetworkAuthenticator? {
-        return NetworkUserAuthenticator()
-    }
-    
-    open func authenticate(username: String, password: String) -> INetworkCaller {
-        if let authenticator = authenticator {
-            authenticator.authenticate(with: self, username: username, password: password)
-        }
+    open func authenticate(with authenticator: INetworkAuthenticator) -> INetworkCaller {
+        authenticator.authenticate(with: self)
         
         return self
     }

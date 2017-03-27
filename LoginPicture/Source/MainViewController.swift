@@ -30,10 +30,9 @@ class MainViewController: UIViewController {
             let caller = AppDelegate.container.resolve(forType: INetworkDownloadCaller.self)!
             
             caller
-                .authenticate(username: username, password: password)
+                .authenticate(with: NetworkUserAuthenticator(username: username, password: password))
                 .withHeader(name: "Content-Type", value: "application/x-www-form-urlencoded")
                 .withHeader(name: "Host", value: "mobility.cleverlance.com")
-                .body("username=\(username)")
                 .post(name: "bootcamp/image.php") {
                     response in
                     
