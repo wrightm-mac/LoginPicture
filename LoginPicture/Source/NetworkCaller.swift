@@ -76,19 +76,19 @@ open class NetworkCaller: INetworkCaller {
         return self
     }
     
-    open func get(name: String, callback: @escaping NetworkCallResponseFunc) {
+    open func get(url name: String, callback: @escaping NetworkCallResponseFunc) {
         doCall(name: name, httpMethod: "GET", callback: callback)
     }
     
-    open func post(name: String, callback: @escaping NetworkCallResponseFunc) {
+    open func post(url name: String, callback: @escaping NetworkCallResponseFunc) {
         doCall(name: name, httpMethod: "POST", callback: callback)
     }
     
-    open func put(name: String, callback: @escaping NetworkCallResponseFunc) {
+    open func put(url name: String, callback: @escaping NetworkCallResponseFunc) {
         doCall(name: name, httpMethod: "PUT", callback: callback)
     }
     
-    open func delete(name: String, callback: @escaping NetworkCallResponseFunc) {
+    open func delete(url name: String, callback: @escaping NetworkCallResponseFunc) {
         doCall(name: name, httpMethod: "DELETE", callback: callback)
     }
     
@@ -154,7 +154,6 @@ open class NetworkCaller: INetworkCaller {
         // Set the request body...
         
         request.httpBody = body.toData()
-        
         
         // Perform the request...
         

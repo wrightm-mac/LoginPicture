@@ -39,11 +39,11 @@ public protocol INetworkCaller {
     
     // Call & response...
     
-    func get(name: String, callback: @escaping NetworkCallResponseFunc)
+    func get(url: String, callback: @escaping NetworkCallResponseFunc)
     
-    func post(name: String, callback: @escaping NetworkCallResponseFunc)
+    func post(url: String, callback: @escaping NetworkCallResponseFunc)
     
-    func put(name: String, callback: @escaping NetworkCallResponseFunc)
+    func put(url: String, callback: @escaping NetworkCallResponseFunc)
     
-    func delete(name: String, callback: @escaping NetworkCallResponseFunc)
+    func delete(url: String, callback: @escaping NetworkCallResponseFunc)
 }

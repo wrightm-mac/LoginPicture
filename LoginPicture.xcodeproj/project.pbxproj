@@ -16,6 +16,7 @@
 		241FADE21E880BA7003A98E8 /* FramedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241FADE11E880BA7003A98E8 /* FramedImageView.swift */; };
 		241FADE41E880BD7003A98E8 /* FramedImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 241FADE31E880BD7003A98E8 /* FramedImage.xib */; };
 		242385ED1E88F81800AF7620 /* NetworkTokenAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242385EC1E88F81800AF7620 /* NetworkTokenAuthenticator.swift */; };
+		242385EF1E88F94B00AF7620 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242385EE1E88F94B00AF7620 /* NetworkTests.swift */; };
 		242565C01E7ECCC700C246A1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565BF1E7ECCC700C246A1 /* Logger.swift */; };
 		242565C31E7ECD0100C246A1 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C21E7ECD0100C246A1 /* LogLevel.swift */; };
 		242565C51E7ECFA200C246A1 /* ConsoleLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */; };
@@ -30,7 +31,6 @@
 		24B896DA1E7D93E700F3F8A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B896D81E7D93E700F3F8A0 /* Main.storyboard */; };
 		24B896DC1E7D93E700F3F8A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24B896DB1E7D93E700F3F8A0 /* Assets.xcassets */; };
 		24B896DF1E7D93E700F3F8A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24B896DD1E7D93E700F3F8A0 /* LaunchScreen.storyboard */; };
-		24B896EA1E7D93E700F3F8A0 /* LoginPictureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B896E91E7D93E700F3F8A0 /* LoginPictureTests.swift */; };
 		24B896F81E7D943500F3F8A0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B896F71E7D943500F3F8A0 /* MainViewController.swift */; };
 		24B896FA1E7D94A200F3F8A0 /* LoginPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B896F91E7D94A200F3F8A0 /* LoginPanel.swift */; };
 		24B896FC1E7D94F100F3F8A0 /* LoginPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B896FB1E7D94F100F3F8A0 /* LoginPanelView.swift */; };
@@ -63,6 +63,7 @@
 		241FADE11E880BA7003A98E8 /* FramedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FramedImageView.swift; path = Source/FramedImageView.swift; sourceTree = "<group>"; };
 		241FADE31E880BD7003A98E8 /* FramedImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FramedImage.xib; path = Source/FramedImage.xib; sourceTree = "<group>"; };
 		242385EC1E88F81800AF7620 /* NetworkTokenAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkTokenAuthenticator.swift; path = Source/NetworkTokenAuthenticator.swift; sourceTree = "<group>"; };
+		242385EE1E88F94B00AF7620 /* NetworkTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		242565BF1E7ECCC700C246A1 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Source/Logger.swift; sourceTree = "<group>"; };
 		242565C21E7ECD0100C246A1 /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogLevel.swift; path = Source/LogLevel.swift; sourceTree = "<group>"; };
 		242565C41E7ECFA200C246A1 /* ConsoleLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConsoleLogWriter.swift; path = Source/ConsoleLogWriter.swift; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 		24B896DE1E7D93E700F3F8A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		24B896E01E7D93E700F3F8A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24B896E51E7D93E700F3F8A0 /* LoginPictureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginPictureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		24B896E91E7D93E700F3F8A0 /* LoginPictureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPictureTests.swift; sourceTree = "<group>"; };
 		24B896EB1E7D93E700F3F8A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24B896F71E7D943500F3F8A0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Source/MainViewController.swift; sourceTree = "<group>"; };
 		24B896F91E7D94A200F3F8A0 /* LoginPanel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPanel.swift; path = Source/LoginPanel.swift; sourceTree = "<group>"; };
@@ -188,9 +188,9 @@
 		24B896E81E7D93E700F3F8A0 /* LoginPictureTests */ = {
 			isa = PBXGroup;
 			children = (
-				24B896E91E7D93E700F3F8A0 /* LoginPictureTests.swift */,
 				24B896EB1E7D93E700F3F8A0 /* Info.plist */,
 				24DE06261E814E930072E5FE /* ContainerTests.swift */,
+				242385EE1E88F94B00AF7620 /* NetworkTests.swift */,
 			);
 			path = LoginPictureTests;
 			sourceTree = "<group>";
@@ -404,7 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24B896EA1E7D93E700F3F8A0 /* LoginPictureTests.swift in Sources */,
+				242385EF1E88F94B00AF7620 /* NetworkTests.swift in Sources */,
 				24DE06271E814E930072E5FE /* ContainerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

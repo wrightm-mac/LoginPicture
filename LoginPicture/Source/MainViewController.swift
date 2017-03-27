@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
                 .authenticate(with: NetworkUserAuthenticator(username: username, password: password))
                 .withHeader(name: "Content-Type", value: "application/x-www-form-urlencoded")
                 .withHeader(name: "Host", value: "mobility.cleverlance.com")
-                .post(name: "bootcamp/image.php") {
+                .post(url: "bootcamp/image.php") {
                     response in
                     
                     Logger.instance.debug("begin: post callback - response-length=\(response?.toString()?.characters.count ?? -1)")
