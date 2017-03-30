@@ -15,7 +15,5 @@
         <string>http://localhost:2108</string>
         <key>BaseUrl</key>
         <string>https://mobility.cleverlance.com</string>
-        <key>LoginService</key>
-        <string>bootcamp/image.php</string>
     </dict>
 </plist>
