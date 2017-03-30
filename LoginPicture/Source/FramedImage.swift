@@ -65,7 +65,7 @@ open class FramedImage: UIView {
 
         view.borderColor = borderColor ?? .white
         view.borderWidth = borderWidth
-        view.imageView.image = image
+        view.scrollableImage.image = image
     
         super.layoutSubviews()
     }

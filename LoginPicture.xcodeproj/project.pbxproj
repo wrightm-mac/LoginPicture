@@ -40,6 +40,12 @@
 		24B897041E7D986800F3F8A0 /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B897031E7D986800F3F8A0 /* StandardButton.swift */; };
 		24BD04C61E83C86C00C95BE9 /* INetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD04C51E83C86C00C95BE9 /* INetworkCaller.swift */; };
 		24BD04C81E83CC6000C95BE9 /* INetworkAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD04C71E83CC6000C95BE9 /* INetworkAuthenticator.swift */; };
+		24DBBEAC1E8D3A770005E0C4 /* ScrollableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBBEAB1E8D3A770005E0C4 /* ScrollableImage.swift */; };
+		24DBBEAE1E8D3AC20005E0C4 /* ScrollableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBBEAD1E8D3AC20005E0C4 /* ScrollableImageView.swift */; };
+		24DBBEB01E8D3AFE0005E0C4 /* ScrollableImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24DBBEAF1E8D3AFE0005E0C4 /* ScrollableImage.xib */; };
+		24DBBEB21E8D3B560005E0C4 /* CGFloatExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBBEB11E8D3B560005E0C4 /* CGFloatExtensions.swift */; };
+		24DBBEB41E8D3B770005E0C4 /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBBEB31E8D3B770005E0C4 /* CGPointExtensions.swift */; };
+		24DBBEB61E8D3BA50005E0C4 /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DBBEB51E8D3BA50005E0C4 /* CGSizeExtensions.swift */; };
 		24DE06271E814E930072E5FE /* ContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE06261E814E930072E5FE /* ContainerTests.swift */; };
 		24DE062E1E81740F0072E5FE /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DE062D1E81740F0072E5FE /* NetworkCaller.swift */; };
 /* End PBXBuildFile section */
@@ -93,6 +99,12 @@
 		24B897031E7D986800F3F8A0 /* StandardButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StandardButton.swift; path = Source/StandardButton.swift; sourceTree = "<group>"; };
 		24BD04C51E83C86C00C95BE9 /* INetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INetworkCaller.swift; path = Source/INetworkCaller.swift; sourceTree = "<group>"; };
 		24BD04C71E83CC6000C95BE9 /* INetworkAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = INetworkAuthenticator.swift; path = Source/INetworkAuthenticator.swift; sourceTree = "<group>"; };
+		24DBBEAB1E8D3A770005E0C4 /* ScrollableImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollableImage.swift; path = Source/ScrollableImage.swift; sourceTree = "<group>"; };
+		24DBBEAD1E8D3AC20005E0C4 /* ScrollableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrollableImageView.swift; path = Source/ScrollableImageView.swift; sourceTree = "<group>"; };
+		24DBBEAF1E8D3AFE0005E0C4 /* ScrollableImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ScrollableImage.xib; path = Source/ScrollableImage.xib; sourceTree = "<group>"; };
+		24DBBEB11E8D3B560005E0C4 /* CGFloatExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGFloatExtensions.swift; path = Source/CGFloatExtensions.swift; sourceTree = "<group>"; };
+		24DBBEB31E8D3B770005E0C4 /* CGPointExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGPointExtensions.swift; path = Source/CGPointExtensions.swift; sourceTree = "<group>"; };
+		24DBBEB51E8D3BA50005E0C4 /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CGSizeExtensions.swift; path = Source/CGSizeExtensions.swift; sourceTree = "<group>"; };
 		24DE06261E814E930072E5FE /* ContainerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerTests.swift; sourceTree = "<group>"; };
 		24DE062D1E81740F0072E5FE /* NetworkCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NetworkCaller.swift; path = Source/NetworkCaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -209,6 +221,9 @@
 				24B896FD1E7D952A00F3F8A0 /* LoginPanel.xib */,
 				24B896FB1E7D94F100F3F8A0 /* LoginPanelView.swift */,
 				24B897031E7D986800F3F8A0 /* StandardButton.swift */,
+				24DBBEAB1E8D3A770005E0C4 /* ScrollableImage.swift */,
+				24DBBEAD1E8D3AC20005E0C4 /* ScrollableImageView.swift */,
+				24DBBEAF1E8D3AFE0005E0C4 /* ScrollableImage.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -244,6 +259,9 @@
 		24B897001E7D961700F3F8A0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				24DBBEB11E8D3B560005E0C4 /* CGFloatExtensions.swift */,
+				24DBBEB31E8D3B770005E0C4 /* CGPointExtensions.swift */,
+				24DBBEB51E8D3BA50005E0C4 /* CGSizeExtensions.swift */,
 				241FADD91E87EA37003A98E8 /* DataExtensions.swift */,
 				240940371E8691370079E76A /* StringExtensions.swift */,
 				24B897011E7D962D00F3F8A0 /* UIViewExtensions.swift */,
@@ -356,6 +374,7 @@
 				24B896DF1E7D93E700F3F8A0 /* LaunchScreen.storyboard in Resources */,
 				24B896DC1E7D93E700F3F8A0 /* Assets.xcassets in Resources */,
 				241FADE41E880BD7003A98E8 /* FramedImage.xib in Resources */,
+				24DBBEB01E8D3AFE0005E0C4 /* ScrollableImage.xib in Resources */,
 				24B896DA1E7D93E700F3F8A0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,11 +393,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24DBBEAC1E8D3A770005E0C4 /* ScrollableImage.swift in Sources */,
 				242565C71E7ED17900C246A1 /* ILogWriter.swift in Sources */,
 				24B896FA1E7D94A200F3F8A0 /* LoginPanel.swift in Sources */,
+				24DBBEB61E8D3BA50005E0C4 /* CGSizeExtensions.swift in Sources */,
 				24B897021E7D962D00F3F8A0 /* UIViewExtensions.swift in Sources */,
 				2448E27C1E7DAC36001F682A /* KeyboardableView.swift in Sources */,
 				241FADDE1E87EE24003A98E8 /* INetworkDownloadCaller.swift in Sources */,
+				24DBBEB21E8D3B560005E0C4 /* CGFloatExtensions.swift in Sources */,
 				241FADE21E880BA7003A98E8 /* FramedImageView.swift in Sources */,
 				242565C51E7ECFA200C246A1 /* ConsoleLogWriter.swift in Sources */,
 				241FADE01E880B3D003A98E8 /* FramedImage.swift in Sources */,
@@ -390,9 +412,11 @@
 				240940341E866CBF0079E76A /* NetworkUserAuthenticator.swift in Sources */,
 				24B896D51E7D93E700F3F8A0 /* AppDelegate.swift in Sources */,
 				241FADDC1E87EDAF003A98E8 /* NetworkDownloadCaller.swift in Sources */,
+				24DBBEAE1E8D3AC20005E0C4 /* ScrollableImageView.swift in Sources */,
 				241FADDA1E87EA37003A98E8 /* DataExtensions.swift in Sources */,
 				242565CC1E7EDC3100C246A1 /* ConfigurationValue.swift in Sources */,
 				240940381E8691370079E76A /* StringExtensions.swift in Sources */,
+				24DBBEB41E8D3B770005E0C4 /* CGPointExtensions.swift in Sources */,
 				24DE062E1E81740F0072E5FE /* NetworkCaller.swift in Sources */,
 				244B87611E8577D6009D1B46 /* Sha1.swift in Sources */,
 				24B896FC1E7D94F100F3F8A0 /* LoginPanelView.swift in Sources */,
