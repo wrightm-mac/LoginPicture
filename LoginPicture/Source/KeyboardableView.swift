@@ -77,6 +77,19 @@ open class KeyboardableView: UIView {
     
     // MARK:    Behaviours -- override to provide custom styling for fields..
     
+    open func prepareUnfocused() {
+        visitChildren(recurse: true) {
+            view in
+            
+            if let textField = view as? UITextField {
+                if textField.isFirstResponder {
+                    textField.resignFirstResponder()
+                }
+                self.unfocusStyle(textField: textField)
+            }
+        }
+    }
+    
     open func focusStyle(textField: UITextField) {
         textField.applyShadow()
     }

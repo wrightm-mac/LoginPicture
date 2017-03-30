@@ -71,6 +71,7 @@ open class LoginPanel: KeyboardableView {
     }
     
     open func loginPressed(username: String, password: String) {
+        prepareUnfocused()
         loginFunc?(username, password)
     }
 }
